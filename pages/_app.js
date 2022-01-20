@@ -1,7 +1,13 @@
-import '../styles/globals.css'
+import { Normalize } from 'styled-normalize'
 
-function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />
+function App({ Component, pageProps }) {
+
+  return (
+    <>
+      <Normalize />
+      <Component {...pageProps} />
+      </>
+  );
 }
 
-export default MyApp
+export default App;
