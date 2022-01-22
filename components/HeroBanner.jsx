@@ -5,7 +5,7 @@ import profilepic from "../assets/images/webpicSquare.png"
 import { Section } from '../styles/GlobalComponents'
 const HeroBanner = () => {
     return (
-        <HeroSection row space padding="40px 0px">
+        <HeroSection row space padding="120px 0px 40px 0px">
         <TextWrapper>
         <Header>Hi, I'm Adrian Petersson.</Header>
         <SubHeader>Frontend Developer & UX-Designer at Fitness24Seven

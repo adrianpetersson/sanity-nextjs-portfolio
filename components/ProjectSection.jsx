@@ -5,7 +5,7 @@ import {ProjectCard} from "../components";
 const ProjectSection = ({project}) => {
 
     return (
-        <GridContainer>
+        <GridContainer id="projects">
         {project.map((item) => (
             <ProjectCard
               key={item.id}

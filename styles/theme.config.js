@@ -5,7 +5,8 @@ export const lightTheme = {
  body: "#fff",
  text:"#000",
  container:"#fff",
- link:  "blue"
+ link:  "blue",
+ nav: "gray"
 };
 
 export const darkTheme = {
@@ -13,7 +14,8 @@ export const darkTheme = {
   body: "hsl(225, 10%, 8%, 1)",
   text:"#fff",
   container:"hsl(223, 14%, 20%, 1)",
-  link: "orange"
+  link: "orange",
+  nav: "black"
  };
 
 

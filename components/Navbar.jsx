@@ -1,30 +1,41 @@
 import Logo from "./Logo"
+import {useState, useEffect} from "react"
 import {Container} from "../styles/theme.config"
 import Link from "next/link"
 import {HamburgerMenu, Switch} from "../components"
 import styled from "styled-components"
 
 const Navbar = ({toggleTheme,theme}) => {
+    const [colorChange, setColorChange] = useState(false);
+
+    const handleScroll = () => {
+      if(window.scrollY >= 80) return setColorChange(true)
+     return setColorChange(false)
+   };
+   useEffect(() => {
+    window.addEventListener("scroll", handleScroll); 
+    return () => window.removeEventListener("scroll", handleScroll);
+  });
 
     return (
-        <Nav>
+        <Nav visible={colorChange}>
         <NavContainer>
         <Logo size="60" />
-        <HamburgerMenu />
+        <HamburgerMenu theme={theme} toggleTheme={toggleTheme} />
         <NavMenu>
         <NavList>
         <ListItem>
-        <Link href="/"> 
+        <Link href="/#projects"> 
         <a>Projects</a> 
         </Link>
         </ListItem>
         <ListItem>
-        <Link href="#about"> 
+        <Link href="/#about"> 
         <a>About</a> 
         </Link>
         </ListItem>
         <ListItem>
-        <Link href="/contact"> 
+        <Link href="/#about"> 
         <a>Contact</a> 
         </Link>
         </ListItem>
@@ -41,7 +52,11 @@ const Navbar = ({toggleTheme,theme}) => {
 }
 
 const Nav = styled.nav`
-position:relative;
+transition: ease-in-out .3s;
+background: ${({ theme, visible }) => visible ? theme.container : ""}; 
+z-index:999;
+position:fixed;
+width:100%;
 height: 80px;
 display:flex;
 align-items:center;

@@ -7,7 +7,7 @@ const Contact = () => {
   const [state, handleSubmit] = useForm("xqkneyvp");
 
     return (
-        <Section>
+        <Section id="contact">
         <StyledForm onSubmit={handleSubmit}>
           <h2>Contact me</h2>
           <label htmlFor="name">Name</label>

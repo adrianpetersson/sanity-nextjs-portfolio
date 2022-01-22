@@ -1,10 +1,11 @@
 import React, {useState}  from 'react'
 import styled from "styled-components"
 import { Switch } from './index'
+import Link from 'next/link';
 
 
 
-const HamburgerMenu = () => {
+const HamburgerMenu = ({toggleTheme,theme}) => {
   const [showMenuNav, setShowMenuNav] = useState(false)
 
     return (
@@ -15,17 +16,32 @@ const HamburgerMenu = () => {
       <div />
     </MenuIcon>
       <MobileNav nav={showMenuNav}>
-      <Switch mobile={true}/>
-      <ul>
-         <li>Projects</li>
-         <li>About</li>
-         <li>Contact me</li>
-      </ul>
+      <Switch theme={theme} toggleTheme={toggleTheme} mobile={true}/>
+      <HamburgerList>
+      <Link href="/#projects">
+        <li>
+        <a onClick={() => setShowMenuNav(false)}>Projects</a> 
+        </li>
+        </Link>
+        <Link href="/#about">
+        <li>
+        <a onClick={() => setShowMenuNav(false)}>About</a> 
+        </li>
+        </Link>
+        <Link href="/#contact">
+        <li>
+        <a onClick={() => setShowMenuNav(false)}>Contact</a> 
+        </li>
+        </Link>
+      </HamburgerList>
       </MobileNav>
       </>
     )
 }
 
+const HamburgerList = styled.ul`
+margin: 30px 30px;
+text-align: right;`
 const MenuIcon = styled.button`
   position: relative;
   display: flex;
