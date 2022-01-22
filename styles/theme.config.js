@@ -5,7 +5,7 @@ export const lightTheme = {
  body: "#fff",
  text:"#000",
  container:"#fff",
- link:  "blue",
+ link:  "#666",
  modeSwitch: "hsl(223, 14%, 20%, 1)"
 };
 
@@ -14,7 +14,7 @@ export const darkTheme = {
   body: "hsl(225, 10%, 8%, 1)",
   text:"#fff",
   container:"hsl(223, 14%, 20%, 1)",
-  link: "orange",
+  link: "#e6e6e6",
   modeSwitch: "#fff"
  };
 
@@ -43,8 +43,19 @@ line-height:34px;
 }
 a {
   color: ${({ theme }) => theme.link};
+  text-decoration:none;
+  &:hover{
+    color: gray;
+  }
 }
-input, textarea, button {font-family: inherit}`;
+input, textarea, button {font-family: inherit}
+ul,li{
+list-style:none;
+display:inline-block;
+&:not(:last-child){
+  margin-right: 3rem;
+}
+}`;
 
 export const Container = styled.div`
   z-index: 1;
