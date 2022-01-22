@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 
 
-const HamburgerMenu = ({toggleTheme,theme}) => {
+const HamburgerMenu = () => {
   const [showMenuNav, setShowMenuNav] = useState(false)
 
     return (
@@ -16,7 +16,6 @@ const HamburgerMenu = ({toggleTheme,theme}) => {
       <div />
     </MenuIcon>
       <MobileNav nav={showMenuNav}>
-      <Switch theme={theme} toggleTheme={toggleTheme} mobile={true}/>
       <HamburgerList>
       <Link href="/#projects">
         <li>

@@ -6,7 +6,7 @@ export const lightTheme = {
  text:"#000",
  container:"#fff",
  link:  "blue",
- nav: "gray"
+ modeSwitch: "hsl(223, 14%, 20%, 1)"
 };
 
 export const darkTheme = {
@@ -15,7 +15,7 @@ export const darkTheme = {
   text:"#fff",
   container:"hsl(223, 14%, 20%, 1)",
   link: "orange",
-  nav: "black"
+  modeSwitch: "#fff"
  };
 
 

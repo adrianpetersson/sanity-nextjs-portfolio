@@ -21,7 +21,7 @@ const StackSection = ({about}) => {
           />
         </AboutMeSection>
         <IconSection>
-        <IconContext.Provider value={{ size: "65px",style: { margin: "10px 20px" }}}>
+        <IconContext.Provider value={{ style: { margin: "10px 20px", fontSize:"clamp(40px, 8vw, 80px)" }}}>
         {icons.map((Icon, idx) => (
 <IconWrapper key={idx} >
   <Icon />

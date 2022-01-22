@@ -21,7 +21,8 @@ const Navbar = ({toggleTheme,theme}) => {
         <Nav visible={colorChange}>
         <NavContainer>
         <Logo size="60" />
-        <HamburgerMenu theme={theme} toggleTheme={toggleTheme} />
+        <Switch theme={theme} toggleTheme={toggleTheme} />
+        <HamburgerMenu/>
         <NavMenu>
         <NavList>
         <ListItem>
@@ -43,7 +44,6 @@ const Navbar = ({toggleTheme,theme}) => {
         <hr />
         
      </NavList>
-     <Switch theme={theme} toggleTheme={toggleTheme} />
      </NavMenu>
         </NavContainer> 
         </Nav>
