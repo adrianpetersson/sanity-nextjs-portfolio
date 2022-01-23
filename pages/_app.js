@@ -1,12 +1,11 @@
-import { Normalize } from 'styled-normalize'
+import { Normalize } from 'styled-normalize';
 
 function App({ Component, pageProps }) {
-
   return (
     <>
       <Normalize />
       <Component {...pageProps} />
-      </>
+    </>
   );
 }
 

@@ -1,65 +1,50 @@
-import React from 'react'
-import { Section } from '../styles/GlobalComponents'
-import styled from 'styled-components'
+import React from 'react';
+import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
+import { Section } from '../styles/GlobalComponents';
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm("xqkneyvp");
+  const [state, handleSubmit] = useForm('xqkneyvp');
 
-    return (
-        <Section id="contact">
-        <StyledForm onSubmit={handleSubmit}>
-          <h2>Contact me</h2>
-          <label htmlFor="name">Name</label>
-          <StyledInput
-            type="text"
-            name="name"
-          />
-          <label htmlFor="email">Email</label>
-          <StyledInput
-            type="email"
-            name="email"
-          />
-           <ValidationError 
-        prefix="Email" 
-        field="email"
-        errors={state.errors}
-      />
-          <label htmlFor="message">Message</label>
-          <StyledTextArea
-           id="message"
-           name="message"
-          />
-            <ValidationError 
-        prefix="Message" 
-        field="message"
-        errors={state.errors}
-      />
-          <StyledButton type="submit" disabled={state.submitting}>Send Message</StyledButton>
-          {state.succeeded && <SubmitMessage>Thank you for getting in touch!</SubmitMessage> }
-        </StyledForm>
-        </Section>
-    )
-}
+  return (
+    <Section id="contact">
+      <StyledForm onSubmit={handleSubmit}>
+        <h2>Contact me</h2>
+        <label htmlFor="name">Name</label>
+        <StyledInput type="text" name="name" />
+        <label htmlFor="email">Email</label>
+        <StyledInput type="email" name="email" />
+        <ValidationError prefix="Email" field="email" errors={state.errors} />
+        <label htmlFor="message">Message</label>
+        <StyledTextArea id="message" name="message" />
+        <ValidationError
+          prefix="Message"
+          field="message"
+          errors={state.errors}
+        />
+        <StyledButton type="submit" disabled={state.submitting}>
+          Send Message
+        </StyledButton>
+        {state.succeeded && (
+          <SubmitMessage>Thank you for getting in touch!</SubmitMessage>
+        )}
+      </StyledForm>
+    </Section>
+  );
+};
 
 const SubmitMessage = styled.p`
-margin-top: 1rem;
-`
+  margin-top: 1rem;
+`;
 const StyledForm = styled.form`
-margin: 20px 0;
+  margin: 20px 0;
   width: 100%;
   max-width: 800px;
   padding: 40px;
-  background: ${({ theme }) => theme.container}; 
+  background: ${({ theme }) => theme.container};
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-`;
-
-const StyledError = styled.div`
-  color: red;
-  font-weight: 800;
-  margin: 0 0 40px 0;
 `;
 
 const StyledInput = styled.input`
@@ -99,4 +84,4 @@ const StyledButton = styled.button`
   cursor: pointer;
   box-sizing: border-box;
 `;
-export default Contact
+export default Contact;
