@@ -44,6 +44,7 @@ line-height:34px;
 a {
   color: ${({ theme }) => theme.link};
   text-decoration:none;
+  transition: all 0.2s ease-in-out;
   &:hover{
     color: gray;
   }

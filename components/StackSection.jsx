@@ -12,7 +12,7 @@ const icons = [SiTailwindcss,SiReact,SiJavascript, SiStyledcomponents, SiFigma, 
 const StackSection = ({about}) => {
     const body = about[0].body
     return (
-        <Section grid gridgap={"50px"} id="about">
+        <Section padding="40px 0px" grid gridgap={"50px"} id="about">
             <AboutMeSection>
         <h1>About Me</h1>
         <PortableText

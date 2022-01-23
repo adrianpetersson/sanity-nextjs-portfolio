@@ -16,7 +16,7 @@ const HamburgerMenu = () => {
       <div />
     </MenuIcon>
       <MobileNav nav={showMenuNav}>
-      <HamburgerList>
+      <ul>
       <Link href="/#projects">
         <li>
         <a onClick={() => setShowMenuNav(false)}>Projects</a> 
@@ -32,15 +32,13 @@ const HamburgerMenu = () => {
         <a onClick={() => setShowMenuNav(false)}>Contact</a> 
         </li>
         </Link>
-      </HamburgerList>
+      </ul>
       </MobileNav>
       </>
     )
 }
 
-const HamburgerList = styled.ul`
-margin: 30px 30px;
-text-align: right;`
+
 const MenuIcon = styled.button`
   position: relative;
   display: flex;
@@ -92,27 +90,26 @@ flex-direction:column;
 align-items:center;
 text-align: end;
 height: 100vh;
-width: 50%;
 background: ${({ theme }) => theme.container};
 color:white;
+width:200px;
 position:absolute;
 top: 0;
 right:0;
 transition: transform 300ms;
 transform: ${ ({nav}) => (nav ? "translateX(0)" : "translateX(100%)") };
 ul{
-margin-top: 4rem;
 list-style-type:none;
 font-size: 1.5rem;
+margin: 60px 30px;
+text-align: left;
 }
 
 li{
 margin-top: 1rem;
 color: ${({ theme }) => theme.text};
-cursor: pointer;
-:hover{
-    color: blue;
- }
+display:inline-block;
+width:100%;
 }
 
 `
