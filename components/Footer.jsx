@@ -18,8 +18,8 @@ const FooterText = styled.p`
 `;
 const FooterSection = styled.footer`
   position: relative;
-  background: #282829;
-  color: white;
+  background: {({theme}) => theme.container}
+  color: {({theme}) => theme.text}
   text-align: center;
   height: 20vh;
   display: flex;
