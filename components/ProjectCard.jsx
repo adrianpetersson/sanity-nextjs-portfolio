@@ -1,9 +1,11 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FiExternalLink } from 'react-icons/fi';
-import { urlFor } from '../sanity';
-import { Button } from '.';
-import { Label } from '../styles/GlobalComponents';
+import React from "react";
+import styled from "styled-components";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithubSquare } from "react-icons/fa";
+import { urlFor } from "../sanity";
+import { Button } from ".";
+import { Label } from "../styles/GlobalComponents";
+import Link from "next/link";
 
 const ProjectCard = ({
   id,
@@ -26,13 +28,19 @@ const ProjectCard = ({
             <div></div>
             <Title>{title}</Title>
             <CardDescription>{description}</CardDescription>
+            <Divider />
             <LinkBar>
               {link && (
-                <StyledLink link={link}>
-                  Live Website
+                <ExternalLink link={link}>
+                  Website
                   <FiExternalLink />
-                </StyledLink>
+                </ExternalLink>
               )}
+              <Link href="https://github.com/">
+                <StyledLink>
+                  <GhIcon size={45} />
+                </StyledLink>
+              </Link>
               <Button link={slug.current}>Read more..</Button>
             </LinkBar>
           </InfoContainer>
@@ -41,6 +49,15 @@ const ProjectCard = ({
     </>
   );
 };
+
+const Divider = styled.hr`
+  margin-top: 10px;
+  width: 100%;
+`;
+const GhIcon = styled(FaGithubSquare)`
+  font-size: 40px;
+  text-align: center;
+`;
 const CardDescription = styled.p`
 line-height:30px;
 @media (min-width: 960px){
@@ -48,10 +65,18 @@ line-height: 34px;
   }
 }`;
 
+const ExternalLink = styled.a`
+  display: flex;
+  align-items: center;
+  margin-right: auto;
+  @media (min-width: 960px) {
+  margin-right: unset;
+  }
+`;
+
 const StyledLink = styled.a`
   display: flex;
   align-items: center;
-  gap: 4px;
 `;
 const StyledImage = styled.img`
   overflow: hidden;
@@ -89,15 +114,15 @@ const StyledLabel = styled(Label)`
   box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
 `;
 const LinkBar = styled.div`
+  gap: 10px;
   margin-top: 1rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  gap: 10px;
+  justify-content: flex-end;
   @media (min-width: 960px) {
     justify-content: flex-end;
     align-items: center;
-    gap: 30px;
+    gap: 20px;
     flex-direction: row;
   }
 `;

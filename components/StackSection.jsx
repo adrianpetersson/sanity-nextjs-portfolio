@@ -50,7 +50,7 @@ const StackSection = ({ about }) => {
 };
 const IconSection = styled.div`
   width: 100%;
-  justify-content: center;
+  justify-content: space-evenly;
   display: flex;
   flex-wrap: wrap;
   align-items: center;

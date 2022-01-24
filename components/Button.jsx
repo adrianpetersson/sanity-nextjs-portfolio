@@ -11,7 +11,6 @@ const Button = ({ link, children }) => {
 };
 
 const StyledLink = styled.a`
-  margin-left: auto;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -19,14 +18,15 @@ const StyledLink = styled.a`
   text-align: center;
   height: 40px;
   padding: 0 20px;
-  background: #003afa;
+  background-color: #003afa;
   box-sizing: border-box;
   border-radius: 5px;
   color: white;
-  cursor: pointer;
-  transition: all 0.2s ease-in-out;
+  transition: all 0.4s ease;
   &:hover {
-    background: #ae00ff;
+    background: ${({ theme }) => theme.hover};
+    transform: translateY(-8%);
+    color: white;
   }
   @media (min-width: 960px) {
     margin-left: unset;
