@@ -40,6 +40,11 @@ export default {
       type: "url",
     },
     {
+      name: "github",
+      title: "Github Link",
+      type: "url",
+    },
+    {
       name: "slug",
       title: "Slug",
       type: "slug",

@@ -13,6 +13,7 @@ const ProjectSection = ({ project }) => {
           type={item.type}
           mainImage={item.mainImage}
           link={item.link}
+          github={item.github}
           slug={item.slug}
         />
       ))}

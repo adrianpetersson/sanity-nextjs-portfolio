@@ -1,11 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import { FiExternalLink } from "react-icons/fi";
-import { FaGithubSquare } from "react-icons/fa";
-import { urlFor } from "../sanity";
-import { Button } from ".";
-import { Label } from "../styles/GlobalComponents";
-import Link from "next/link";
+import React from 'react';
+import styled from 'styled-components';
+import { FiExternalLink } from 'react-icons/fi';
+import { FaGithubSquare } from 'react-icons/fa';
+import { urlFor } from '../sanity';
+import { Button } from '.';
+import { Label } from '../styles/GlobalComponents';
 
 const ProjectCard = ({
   id,
@@ -15,6 +14,7 @@ const ProjectCard = ({
   type,
   slug,
   link,
+  github,
 }) => {
   return (
     <>
@@ -31,16 +31,19 @@ const ProjectCard = ({
             <Divider />
             <LinkBar>
               {link && (
-                <ExternalLink link={link}>
+                <ExternalLink rel="noreferrer" target="_blank" href={link}>
                   Website
                   <FiExternalLink />
                 </ExternalLink>
               )}
-              <Link href="https://github.com/">
-                <StyledLink>
-                  <GhIcon size={45} />
-                </StyledLink>
-              </Link>
+              {github && (
+                <a rel="noreferrer" target="_blank" href={github}>
+                  <StyledLink>
+                    <GhIcon size={45} />
+                  </StyledLink>
+                </a>
+              )}
+
               <Button link={slug.current}>Read more..</Button>
             </LinkBar>
           </InfoContainer>
@@ -70,7 +73,7 @@ const ExternalLink = styled.a`
   align-items: center;
   margin-right: auto;
   @media (min-width: 960px) {
-  margin-right: unset;
+    margin-right: unset;
   }
 `;
 
