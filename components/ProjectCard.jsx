@@ -31,14 +31,14 @@ const ProjectCard = ({
             <Divider />
             <LinkBar>
               {link && (
-                <StyledLink rel="noreferrer" target="_blank" href={link}>
+                <ExternalLink rel="noreferrer" target="_blank" href={link}>
                   Website
                   <FiExternalLink />
-                </StyledLink>
+                </ExternalLink>
               )}
               {github && (
                 <StyledLink rel="noreferrer" target="_blank" href={github}>
-                    <GhIcon size={45} />
+                  <GhIcon size={45} />
                 </StyledLink>
               )}
               <Button link={slug.current}>Read more..</Button>
