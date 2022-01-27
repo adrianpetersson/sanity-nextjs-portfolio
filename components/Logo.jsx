@@ -5,7 +5,7 @@ import LogoSvg from '../assets/images/logo.svg';
 
 const Logo = ({ size }) => {
   return (
-    <Link href="/" passHref>
+    <Link href="/">
       <a>
         <Image src={LogoSvg} height={size} width={size} alt="Logo" />
       </a>
