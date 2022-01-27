@@ -25,21 +25,21 @@ const Navbar = ({ toggleTheme, theme }) => {
         <HamburgerMenu />
         <NavMenu>
           <ul>
-            <li>
+            <NavLinks>
               <Link href="/#projects">
                 <a>Projects</a>
               </Link>
-            </li>
-            <li>
+            </NavLinks>
+            <NavLinks>
               <Link href="/#about">
                 <a>About</a>
               </Link>
-            </li>
-            <li>
+            </NavLinks>
+            <NavLinks>
               <Link href="/#about">
                 <a>Contact</a>
               </Link>
-            </li>
+            </NavLinks>
           </ul>
         </NavMenu>
       </NavContainer>
@@ -65,6 +65,11 @@ const NavContainer = styled(Container)`
   height: 80px;
 
   ${Container}
+`;
+const NavLinks = styled.li`
+  &:not(:last-child) {
+    margin-right: 3rem;
+  }
 `;
 const NavMenu = styled.div`
 display:none;

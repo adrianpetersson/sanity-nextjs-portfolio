@@ -61,9 +61,8 @@ input, textarea, button {font-family: inherit}
 ul,li{
 list-style:none;
 display:inline-block;
-&:not(:last-child){
-  margin-right: 3rem;
-}
+font-size:21px;
+line-height:34px;
 }`;
 
 export const Container = styled.div`
