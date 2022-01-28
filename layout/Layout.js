@@ -3,16 +3,12 @@ import { ThemeProvider } from 'styled-components';
 import useDarkMode from '../hooks/useDarkMode';
 
 import { Nav, Footer } from '../components';
-import {
-  Container,
-  GlobalStyles,
-  darkTheme,
-  lightTheme,
-} from '../styles/theme.config';
+import { GlobalStyles, darkTheme, lightTheme } from '../styles/theme.config';
+import { Container } from '../styles/GlobalComponents';
 
 export const Layout = ({ children }) => {
   const [theme, toggleTheme] = useDarkMode();
-  const themeMode = theme === 'light' ? darkTheme : lightTheme;
+  const themeMode = theme === 'light' ? lightTheme : darkTheme;
 
   return (
     <>

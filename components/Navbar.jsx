@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import styled from 'styled-components';
 import Logo from './Logo';
-import { Container } from '../styles/theme.config';
+import { Container } from '../styles/GlobalComponents';
 import { HamburgerMenu, Switch } from '.';
 
 const Navbar = ({ toggleTheme, theme }) => {

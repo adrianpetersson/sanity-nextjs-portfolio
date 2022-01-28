@@ -6,7 +6,7 @@ import { Section } from '../styles/GlobalComponents';
 
 const HeroBanner = () => {
   return (
-    <HeroSection row space padding="120px 0px 40px 0px">
+    <HeroSection row space>
       <TextWrapper>
         <Header>Hi, Im Adrian Petersson.</Header>
         <SubHeader>
@@ -27,9 +27,12 @@ const StyledImage = styled(Image)`
   border-radius: 10px;
 `;
 const HeroSection = styled(Section)`
+padding: 120px 0px 40px 0px;
+@media (min-width: 960px) {
+  padding: 200px 0px 100px 0px;
+  }
 }`;
 const TextWrapper = styled.div`
-
 }`;
 const Header = styled.h1`
   font-weight: 900;

@@ -34,3 +34,20 @@ export const Label = styled.span`
     display: unset;
   }
 `;
+
+export const Container = styled.div`
+  z-index: 1;
+  width: 100%;
+  max-width: 1300px;
+  margin-right: auto;
+  margin-left: auto;
+  padding-right: 50px;
+  padding-left: 50px;
+  padding-top: ${({ padding }) => padding && '40px'};
+  padding-bottom: ${({ padding }) => padding && '20px'};
+
+  @media screen and (max-width: 991px) {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
+`;
