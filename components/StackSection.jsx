@@ -35,7 +35,7 @@ const StackSection = ({ about }) => {
       <IconSection>
         <IconContext.Provider
           value={{
-            style: { margin: '10px 20px', fontSize: 'clamp(40px, 8vw, 80px)' },
+            style: { margin: '10px 20px', fontSize: 'clamp(36px, 8vw, 80px)' },
           }}
         >
           {icons.map((Icon, idx) => (
