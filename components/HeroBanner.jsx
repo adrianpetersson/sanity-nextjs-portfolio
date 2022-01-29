@@ -8,33 +8,33 @@ const HeroBanner = () => {
   return (
     <HeroSection>
       <OverlapPositioning>
-       <ImageWrapper>
-        <StyledImage
-          layout="responsive"
-          src={profilepic}
-          alt="Picture of Adrian Petersson"
-        />
-      </ImageWrapper>
-      <TextWrapper>
-        <Header>Hi, Im Adrian Petersson.</Header>
-      <SubHeader>
-          Frontend Developer & UX-Designer at Fitness24Seven
-        </SubHeader>
+        <ImageWrapper>
+          <StyledImage
+            layout="responsive"
+            src={profilepic}
+            alt="Picture of Adrian Petersson"
+          />
+        </ImageWrapper>
+        <TextWrapper>
+          <Header>Hi, Im Adrian Petersson.</Header>
+          <SubHeader>
+            Frontend Developer & UX-Designer at Fitness24Seven
+          </SubHeader>
         </TextWrapper>
-        </OverlapPositioning>
+      </OverlapPositioning>
     </HeroSection>
   );
 };
 
 const OverlapPositioning = styled.div`
-  width:100%;
-  min-height:60vh;
+  width: 100%;
+  min-height: 60vh;
   position: relative;
   @media (min-width: 960px) {
-  display:flex;
-  flex-direction: row-reverse;
-  justify-content: space-between;
-  align-items:center;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: center;
   }
 `;
 const StyledImage = styled(Image)`
