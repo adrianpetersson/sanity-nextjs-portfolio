@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { useForm, ValidationError } from '@formspree/react';
-import { Section } from '../styles/GlobalComponents';
+import React from "react";
+import styled from "styled-components";
+import { useForm, ValidationError } from "@formspree/react";
+import { Section } from "../styles/GlobalComponents";
 
 const Contact = () => {
-  const [state, handleSubmit] = useForm('xqkneyvp');
+  const [state, handleSubmit] = useForm("xqkneyvp");
 
   return (
     <Section id="contact">

@@ -1,4 +1,4 @@
-# 🚀Next JS 12, Sanity CMS and Styled Components based portfolio 
+# 🚀Next JS 12, Sanity CMS and Styled Components based portfolio
 
 ### Tech
 

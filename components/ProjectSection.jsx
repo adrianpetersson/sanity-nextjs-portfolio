@@ -1,6 +1,6 @@
-import React from 'react';
-import styled from 'styled-components';
-import { ProjectCard } from '.';
+import React from "react";
+import styled from "styled-components";
+import { ProjectCard } from ".";
 
 const ProjectSection = ({ project }) => {
   return (

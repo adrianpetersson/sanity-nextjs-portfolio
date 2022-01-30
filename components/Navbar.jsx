@@ -1,9 +1,9 @@
-import { useState, useEffect } from 'react';
-import Link from 'next/link';
-import styled from 'styled-components';
-import Logo from './Logo';
-import { Container } from '../styles/GlobalComponents';
-import { HamburgerMenu, Switch } from '.';
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import styled from "styled-components";
+import Logo from "./Logo";
+import { Container } from "../styles/GlobalComponents";
+import { HamburgerMenu, Switch } from ".";
 
 const Navbar = ({ toggleTheme, theme }) => {
   const [colorChange, setColorChange] = useState(false);
@@ -13,8 +13,8 @@ const Navbar = ({ toggleTheme, theme }) => {
     return setColorChange(false);
   };
   useEffect(() => {
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   });
 
   return (
@@ -49,7 +49,7 @@ const Navbar = ({ toggleTheme, theme }) => {
 
 const Nav = styled.nav`
   transition: ease-in-out 0.3s;
-  background: ${({ theme, visible }) => (visible ? theme.container : '')};
+  background: ${({ theme, visible }) => (visible ? theme.container : "")};
   z-index: 999;
   position: fixed;
   width: 100%;

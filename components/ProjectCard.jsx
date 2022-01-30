@@ -1,10 +1,10 @@
-import React from 'react';
-import styled from 'styled-components';
-import { FiExternalLink } from 'react-icons/fi';
-import { FaGithubSquare } from 'react-icons/fa';
-import { urlFor } from '../sanity';
-import { Button } from '.';
-import { Label } from '../styles/GlobalComponents';
+import React from "react";
+import styled from "styled-components";
+import { FiExternalLink } from "react-icons/fi";
+import { FaGithubSquare } from "react-icons/fa";
+import { urlFor } from "../sanity";
+import { Button } from ".";
+import { Label } from "../styles/GlobalComponents";
 
 const ProjectCard = ({
   id,
