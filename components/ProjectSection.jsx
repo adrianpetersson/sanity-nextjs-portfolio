@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { ProjectCard } from ".";
+import React from 'react';
+import styled from 'styled-components';
+import { ProjectCard } from '.';
 
-const ProjectSection = ({ project }) => {
+function ProjectSection({ project }) {
   return (
     <GridContainer id="projects">
       {project.map((item) => (
@@ -19,7 +19,7 @@ const ProjectSection = ({ project }) => {
       ))}
     </GridContainer>
   );
-};
+}
 const GridContainer = styled.section`
   display: grid;
   width: 100%;

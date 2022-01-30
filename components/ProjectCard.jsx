@@ -1,12 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-import { FiExternalLink } from "react-icons/fi";
-import { FaGithubSquare } from "react-icons/fa";
-import { urlFor } from "../sanity";
-import { Button } from ".";
-import { Label } from "../styles/GlobalComponents";
+import React from 'react';
+import styled from 'styled-components';
+import { FiExternalLink } from 'react-icons/fi';
+import { FaGithubSquare } from 'react-icons/fa';
+import { urlFor } from '../sanity';
+import { Button } from '.';
+import { Label } from '../styles/GlobalComponents';
 
-const ProjectCard = ({
+function ProjectCard({
   id,
   mainImage,
   title,
@@ -15,40 +15,36 @@ const ProjectCard = ({
   slug,
   link,
   github,
-}) => {
+}) {
   return (
-    <>
-      {title && (
-        <Card key={id}>
-          <ImageContainer>
-            <StyledLabel>{type}</StyledLabel>
-            <StyledImage src={urlFor(mainImage).url()} alt={title} />
-          </ImageContainer>
-          <InfoContainer>
-            <div></div>
-            <Title>{title}</Title>
-            <CardDescription>{description}</CardDescription>
-            <Divider />
-            <LinkBar>
-              {link && (
-                <ExternalLink rel="noreferrer" target="_blank" href={link}>
-                  Website
-                  <FiExternalLink />
-                </ExternalLink>
-              )}
-              {github && (
-                <StyledLink rel="noreferrer" target="_blank" href={github}>
-                  <GhIcon size={45} />
-                </StyledLink>
-              )}
-              <Button link={slug.current}>Read more..</Button>
-            </LinkBar>
-          </InfoContainer>
-        </Card>
-      )}
-    </>
+    <Card key={id}>
+      <ImageContainer>
+        <StyledLabel>{type}</StyledLabel>
+        <StyledImage src={urlFor(mainImage).url()} alt={title} />
+      </ImageContainer>
+      <InfoContainer>
+        <div />
+        <Title>{title}</Title>
+        <CardDescription>{description}</CardDescription>
+        <Divider />
+        <LinkBar>
+          {link && (
+            <ExternalLink rel="noreferrer" target="_blank" href={link}>
+              Website
+              <FiExternalLink />
+            </ExternalLink>
+          )}
+          {github && (
+            <StyledLink rel="noreferrer" target="_blank" href={github}>
+              <GhIcon size={45} />
+            </StyledLink>
+          )}
+          <Button link={slug.current}>Read more..</Button>
+        </LinkBar>
+      </InfoContainer>
+    </Card>
   );
-};
+}
 
 const Divider = styled.hr`
   margin-top: 10px;

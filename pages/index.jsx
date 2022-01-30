@@ -7,7 +7,7 @@ import {
 import { sanityClient } from '../sanity';
 import { Layout } from '../layout/Layout';
 
-const Home = ({ project, about }) => {
+function Home({ project, about }) {
   return (
     <Layout>
       <HeroBanner />
@@ -16,7 +16,7 @@ const Home = ({ project, about }) => {
       <Contact />
     </Layout>
   );
-};
+}
 
 export const getServerSideProps = async () => {
   const query = '*[_type == "project"]';

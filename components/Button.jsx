@@ -1,14 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
 
-const Button = ({ link, children }) => {
+function Button({ link, children }) {
   return (
     <Link href={link}>
       <StyledLink>{children}</StyledLink>
     </Link>
   );
-};
+}
 
 const StyledLink = styled.a`
   display: flex;

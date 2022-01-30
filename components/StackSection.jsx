@@ -1,4 +1,5 @@
-import React from "react";
+/* eslint-disable react/jsx-no-constructed-context-values */
+import React from 'react';
 import {
   SiTailwindcss,
   SiReact,
@@ -6,13 +7,13 @@ import {
   SiStyledcomponents,
   SiFigma,
   SiNextdotjs,
-} from "react-icons/si";
-import { FaSass } from "react-icons/fa";
-import styled from "styled-components";
-import PortableText from "@sanity/block-content-to-react";
-import { IconContext } from "react-icons";
-import { Section } from "../styles/GlobalComponents";
-import { sanityClient } from "../sanity";
+} from 'react-icons/si';
+import { FaSass } from 'react-icons/fa';
+import styled from 'styled-components';
+import PortableText from '@sanity/block-content-to-react';
+import { IconContext } from 'react-icons';
+import { Section } from '../styles/GlobalComponents';
+import { sanityClient } from '../sanity';
 
 const icons = [
   SiTailwindcss,
@@ -24,10 +25,10 @@ const icons = [
   FaSass,
 ];
 
-const StackSection = ({ about }) => {
+function StackSection({ about }) {
   const { body } = about[0];
   return (
-    <Section padding="40px 0px" grid gridgap={"50px"} id="about">
+    <Section padding="40px 0px" grid gridgap="50px" id="about">
       <AboutMeSection>
         <h1>About Me</h1>
         <PortableText blocks={body} {...sanityClient.config()} />
@@ -35,7 +36,7 @@ const StackSection = ({ about }) => {
       <IconSection>
         <IconContext.Provider
           value={{
-            style: { margin: "10px 20px", fontSize: "clamp(36px, 8vw, 80px)" },
+            style: { margin: '10px 20px', fontSize: 'clamp(36px, 8vw, 80px)' },
           }}
         >
           {icons.map((Icon, idx) => (
@@ -47,7 +48,7 @@ const StackSection = ({ about }) => {
       </IconSection>
     </Section>
   );
-};
+}
 const IconSection = styled.div`
   width: 100%;
   justify-content: space-evenly;

@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import styled from 'styled-components';
 import PortableText from '@sanity/block-content-to-react';
@@ -6,31 +7,29 @@ import { Section, Label } from '../styles/GlobalComponents';
 import { Layout } from '../layout/Layout';
 import { defaultSerializer } from '../utility/serializer';
 
-const project = ({ title, mainImage, description, body }) => {
-  return (
-    <Layout>
-      <Section padding="80px 0px 40px 0px" blogstyle>
-        <article>
-          <ArticleHeader>
-            <HeroImage src={urlFor(mainImage).url()} alt="" />
-            <Heading>{title}</Heading>
-            <p>{description}</p>
-            <InfoBar>
-              <Label>type</Label>
-              <Label>Year</Label>
-              <Label>Role</Label>
-            </InfoBar>
-          </ArticleHeader>
-          <PortableText
-            serializers={defaultSerializer()}
-            blocks={body}
-            {...sanityClient.config()}
-          />
-        </article>
-      </Section>
-    </Layout>
-  );
-};
+const project = ({ title, mainImage, description, body }) => (
+  <Layout>
+    <Section padding="80px 0px 40px 0px" blogstyle>
+      <article>
+        <ArticleHeader>
+          <HeroImage src={urlFor(mainImage).url()} alt="" />
+          <Heading>{title}</Heading>
+          <p>{description}</p>
+          <InfoBar>
+            <Label>type</Label>
+            <Label>Year</Label>
+            <Label>Role</Label>
+          </InfoBar>
+        </ArticleHeader>
+        <PortableText
+          serializers={defaultSerializer()}
+          blocks={body}
+          {...sanityClient.config()}
+        />
+      </article>
+    </Section>
+  </Layout>
+);
 export const getServerSideProps = async (pageContext) => {
   const pageSlug = pageContext.query.slug;
 

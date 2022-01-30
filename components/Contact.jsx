@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
-import { useForm, ValidationError } from "@formspree/react";
-import { Section } from "../styles/GlobalComponents";
+/* eslint-disable jsx-a11y/label-has-associated-control */
+import React from 'react';
+import styled from 'styled-components';
+import { useForm, ValidationError } from '@formspree/react';
+import { Section } from '../styles/GlobalComponents';
 
-const Contact = () => {
-  const [state, handleSubmit] = useForm("xqkneyvp");
+function Contact() {
+  const [state, handleSubmit] = useForm('xqkneyvp');
 
   return (
     <Section id="contact">
@@ -31,7 +32,7 @@ const Contact = () => {
       </StyledForm>
     </Section>
   );
-};
+}
 
 const SubmitMessage = styled.p`
   margin-top: 1rem;

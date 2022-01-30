@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Image from "next/image";
-import profilepic from "../assets/images/webpic2.png";
-import { Section } from "../styles/GlobalComponents";
+import React from 'react';
+import styled from 'styled-components';
+import Image from 'next/image';
+import profilepic from '../assets/images/webpic2.png';
+import { Section } from '../styles/GlobalComponents';
 
-const HeroBanner = () => {
+function HeroBanner() {
   return (
     <HeroSection>
       <OverlapPositioning>
@@ -24,7 +24,7 @@ const HeroBanner = () => {
       </OverlapPositioning>
     </HeroSection>
   );
-};
+}
 
 const OverlapPositioning = styled.div`
   width: 100%;

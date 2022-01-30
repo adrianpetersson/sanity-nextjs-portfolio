@@ -1,8 +1,11 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import Link from "next/link";
+/* eslint-disable jsx-a11y/anchor-is-valid */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
 
-const HamburgerMenu = () => {
+function HamburgerMenu() {
   const [showMenuNav, setShowMenuNav] = useState(false);
 
   return (
@@ -33,7 +36,7 @@ const HamburgerMenu = () => {
       </MobileNav>
     </>
   );
-};
+}
 
 const MenuIcon = styled.button`
   position: relative;
@@ -67,13 +70,13 @@ const MenuIcon = styled.button`
     transition: opacity 300ms, transform 300ms;
 
     :first-child {
-      transform: ${({ nav }) => (nav ? "rotate(45deg)" : "rotate(0)")};
+      transform: ${({ nav }) => (nav ? 'rotate(45deg)' : 'rotate(0)')};
     }
     :nth-child(2) {
-      opacity: ${({ nav }) => (nav ? "0" : "1")};
+      opacity: ${({ nav }) => (nav ? '0' : '1')};
     }
     :nth-child(3) {
-      transform: ${({ nav }) => (nav ? "rotate(-45deg)" : "rotate(0)")};
+      transform: ${({ nav }) => (nav ? 'rotate(-45deg)' : 'rotate(0)')};
     }
   }
 `;
@@ -92,7 +95,7 @@ const MobileNav = styled.div`
   top: 0;
   right: 0;
   transition: transform 300ms;
-  transform: ${({ nav }) => (nav ? "translateX(0)" : "translateX(100%)")};
+  transform: ${({ nav }) => (nav ? 'translateX(0)' : 'translateX(100%)')};
   ul {
     list-style-type: none;
     font-size: 1.5rem;

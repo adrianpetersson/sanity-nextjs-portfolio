@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
 
-const Footer = () => {
+function Footer() {
   return (
     <FooterSection>
       <FooterText>
@@ -9,7 +9,7 @@ const Footer = () => {
       </FooterText>
     </FooterSection>
   );
-};
+}
 
 const FooterText = styled.p`
   font-size: 16px;

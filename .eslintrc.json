@@ -1,17 +1,22 @@
 {
   // Configuration for JavaScript files
-  "extends": [
-    "airbnb-base",
-    "next/core-web-vitals",
-    "plugin:prettier/recommended"
+  "extends":["airbnb","prettier",
+    "next/core-web-vitals"
   ],
+  "plugins":["prettier"],
   "rules": {
+    "no-console":"off",
     "prettier/prettier": [
       "error",
       {
         "singleQuote": true,
         "endOfLine": "auto"
       }
-    ]
+    ],
+    "jsx-a11y/anchor-is-valid": [ "error", {
+      "components": [ "Link" ],
+      "specialLink": [ "hrefLeft", "hrefRight" ],
+      "aspects": [ "invalidHref", "preferButton" ]
+    }]
   }
 }
