@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
-import profilepic from '../assets/images/webpic2.png';
+import profilepic from '../assets/images/Heroimage.png';
 import { Section } from '../styles/GlobalComponents';
 
 function HeroBanner() {
