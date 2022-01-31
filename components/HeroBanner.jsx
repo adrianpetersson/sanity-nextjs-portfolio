@@ -17,6 +17,7 @@ function HeroBanner() {
         </ImageWrapper>
         <TextWrapper>
           <Header>Hi, Im Adrian Petersson.</Header>
+          <HorizontalDivider />
           <SubHeader>
             Frontend Developer & UX-Designer at Fitness24Seven
           </SubHeader>
@@ -26,9 +27,13 @@ function HeroBanner() {
   );
 }
 
+const HorizontalDivider = styled.hr`
+  border: 4px solid orange;
+  border-radius: 2px;
+`;
+
 const OverlapPositioning = styled.div`
   width: 100%;
-  min-height: 60vh;
   position: relative;
   @media (min-width: 960px) {
     display: flex;
@@ -41,19 +46,21 @@ const StyledImage = styled(Image)`
   border-radius: 10px;
 `;
 const HeroSection = styled(Section)`
-padding: 80px 0px 40px 0px;
+padding: 80px 0px 160px 0px;
 position:relative;
 z-index:11;
+@media (min-width: 286px) {
+  padding: 100px 0px 120px 0px;
+  }
 @media (min-width: 960px) {
-  padding: 100px 0px 40px 0px;
+  padding: 100px 0px 70px 0px;
   }
 }`;
 const TextWrapper = styled.div`
 position:absolute;
-top:50%;
-@media (min-width: 477px) {
+top:70%;
+@media (min-width: 960px) {
   position:relative;
-  width:60%;
   }
 }`;
 const Header = styled.h1`
@@ -69,8 +76,9 @@ const SubHeader = styled.h2`
 `;
 const ImageWrapper = styled.div`
   position: unset;
+  max-width: 300px;
   @media (min-width: 960px) {
-    width: 350px;
+    min-width: 350px;
   }
 `;
 

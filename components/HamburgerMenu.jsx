@@ -90,7 +90,7 @@ const MobileNav = styled.div`
   height: 100vh;
   background: ${({ theme }) => theme.container};
   color: white;
-  width: 200px;
+  width: 50vw;
   position: absolute;
   top: 0;
   right: 0;

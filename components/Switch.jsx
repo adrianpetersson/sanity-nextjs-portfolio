@@ -22,6 +22,7 @@ const MoonIcon = styled(FiMoon)`
 const Icon = styled(FiSun)`
   opacity: ${(props) => (props.animate === 'light' ? '0' : '1')};
   font-size: 25px;
+  position: absolute;
   color: orange;
   transition: all 1s ease-in-out;
   transform: ${(props) =>
