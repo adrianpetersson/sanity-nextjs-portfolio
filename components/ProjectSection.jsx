@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import { ProjectCard } from '.';
+import breakpoint from '../utility/breakpoints';
 
 function ProjectSection({ project }) {
   return (
@@ -26,7 +27,7 @@ const GridContainer = styled.section`
   grid-template-columns: 1fr;
   grid-gap: 1rem;
   margin-bottom: 2rem;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     grid-template-columns: repeat(2, 1fr);
     grid-auto-rows: 1fr;
   }

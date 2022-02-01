@@ -4,6 +4,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import breakpoint from '../utility/breakpoints';
 
 function HamburgerMenu() {
   const [showMenuNav, setShowMenuNav] = useState(false);
@@ -51,7 +52,7 @@ const MenuIcon = styled.button`
   padding: 0;
   z-index: 999;
 
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     display: none;
   }
 

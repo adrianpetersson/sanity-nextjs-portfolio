@@ -3,6 +3,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useForm, ValidationError } from '@formspree/react';
 import { Section } from '../styles/GlobalComponents';
+import breakpoint from '../utility/breakpoints';
 
 function Contact() {
   const [state, handleSubmit] = useForm('xqkneyvp');
@@ -46,7 +47,7 @@ const StyledForm = styled.form`
   border-radius: 10px;
   box-sizing: border-box;
   box-shadow: 0px 0px 20px 0px rgba(0, 0, 0, 0.2);
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     padding: 40px;
   }
 `;

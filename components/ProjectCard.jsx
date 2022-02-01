@@ -5,6 +5,7 @@ import { FaGithubSquare } from 'react-icons/fa';
 import { urlFor } from '../sanity';
 import { Button } from '.';
 import { Label } from '../styles/GlobalComponents';
+import breakpoint from '../utility/breakpoints';
 
 function ProjectCard({
   id,
@@ -56,7 +57,7 @@ const GhIcon = styled(FaGithubSquare)`
 `;
 const CardDescription = styled.p`
 line-height:30px;
-@media (min-width: 960px){
+@media only screen and ${breakpoint.device.lg}{
 line-height: 34px;
   }
 }`;
@@ -65,7 +66,7 @@ const ExternalLink = styled.a`
   display: flex;
   align-items: center;
   margin-right: auto;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     margin-right: unset;
   }
 `;
@@ -80,7 +81,7 @@ const StyledImage = styled.img`
   height: 100%;
   object-fit: cover;
   transition: all 0.3s ease-in-out;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     width: 600px;
     height: 200px;
     object-fit: cover;
@@ -115,7 +116,7 @@ const LinkBar = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     justify-content: flex-end;
     align-items: center;
     gap: 20px;
@@ -130,7 +131,7 @@ const InfoContainer = styled.div`
 const ImageContainer = styled.div`
   overflow: hidden;
   height: 30vh;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     height: 200px;
     background: rgb(2, 0, 36);
   }

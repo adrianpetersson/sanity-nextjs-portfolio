@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Image from 'next/image';
 import profilepic from '../assets/images/Heroimage.png';
 import { Section } from '../styles/GlobalComponents';
+import breakpoint from '../utility/breakpoints';
 
 function HeroBanner() {
   return (
@@ -35,7 +36,7 @@ const HorizontalDivider = styled.hr`
 const OverlapPositioning = styled.div`
   width: 100%;
   position: relative;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     display: flex;
     flex-direction: row-reverse;
     justify-content: space-between;
@@ -52,14 +53,14 @@ z-index:11;
 @media (min-width: 286px) {
   padding: 100px 0px 120px 0px;
   }
-@media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
   padding: 100px 0px 70px 0px;
   }
 }`;
 const TextWrapper = styled.div`
 position:absolute;
 top:70%;
-@media (min-width: 960px) {
+@media only screen and ${breakpoint.device.lg} {
   position:relative;
   }
 }`;
@@ -71,13 +72,11 @@ const Header = styled.h1`
 const SubHeader = styled.h2`
   font-weight: 900;
   font-size: clamp(21px, 4vw, 34px);
-  @media (min-width: 960px) {
-  }
 `;
 const ImageWrapper = styled.div`
   position: unset;
   max-width: 300px;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     min-width: 350px;
   }
 `;

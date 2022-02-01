@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
 import Link from 'next/link';
+import breakpoint from '../utility/breakpoints';
 
 function Button({ link, children }) {
   return (
@@ -28,7 +29,7 @@ const StyledLink = styled.a`
     transform: translateY(-8%);
     color: white;
   }
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     margin-left: unset;
   }
 `;

@@ -16,6 +16,7 @@ import PortableText from '@sanity/block-content-to-react';
 import { IconContext } from 'react-icons';
 import { Section } from '../styles/GlobalComponents';
 import { sanityClient } from '../sanity';
+import breakpoint from '../utility/breakpoints';
 
 const icons = [
   SiTailwindcss,
@@ -57,7 +58,7 @@ const IconSection = styled.div`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     justify-content: flex-end;
     margin: 30px 0px;
   }

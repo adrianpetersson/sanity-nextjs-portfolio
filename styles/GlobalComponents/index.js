@@ -1,19 +1,19 @@
-import styled from "styled-components";
+import styled from 'styled-components';
+import breakpoint from '../../utility/breakpoints';
 
 export const Section = styled.section`
-  flex-direction: ${(props) => (props.row ? "row" : "column")};
+  flex-direction: ${(props) => (props.row ? 'row' : 'column')};
   margin: 0 auto;
   align-items: center;
-  display:flex;
-  justify-content: ${(props) => (props.space ? "space-between" : "center")};
-  max-width: ${(props) => (props.blogstyle ? "790px" : "1300px")};
+  display: flex;
+  justify-content: ${(props) => (props.space ? 'space-between' : 'center')};
+  max-width: ${(props) => (props.blogstyle ? '790px' : '1300px')};
   position: relative;
-  grid-gap: ${(props) => (props.gridgap || "0")};
+  grid-gap: ${(props) => props.gridgap || '0'};
   grid-template-columns: 1fr 1fr;
-  padding: ${(props) => (props.padding || "0")};  
-  @media (min-width: 960px) {
-  display: ${(props) => (props.grid ? "grid" : "flex")};
-
+  padding: ${(props) => props.padding || '0'};
+  @media only screen and ${breakpoint.device.lg} {
+    display: ${(props) => (props.grid ? 'grid' : 'flex')};
   }
 `;
 
@@ -30,7 +30,7 @@ export const Label = styled.span`
   &:not(:last-child) {
     margin-bottom: 1rem;
   }
-  @media (min-width: 960px) {
+  @media only screen and ${breakpoint.device.lg} {
     display: unset;
   }
 `;

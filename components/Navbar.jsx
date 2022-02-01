@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Logo from './Logo';
 import { Container } from '../styles/GlobalComponents';
 import { HamburgerMenu, Switch } from '.';
+import breakpoint from '../utility/breakpoints';
 
 function Navbar({ toggleTheme, theme }) {
   const [colorChange, setColorChange] = useState(false);
@@ -73,7 +74,7 @@ const NavLinks = styled.li`
 `;
 const NavMenu = styled.div`
 display:none;
-@media (min-width: 960px) {
+@media only screen and ${breakpoint.device.lg} {
 justify-content:flex-end;
 display:flex;
 align-items:center;
