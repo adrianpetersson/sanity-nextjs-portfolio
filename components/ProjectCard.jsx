@@ -30,13 +30,23 @@ function ProjectCard({
         <Divider />
         <LinkBar>
           {link && (
-            <ExternalLink rel="noreferrer" target="_blank" href={link}>
+            <ExternalLink
+              aria-label="external link to website"
+              rel="noreferrer"
+              target="_blank"
+              href={link}
+            >
               Website
               <FiExternalLink />
             </ExternalLink>
           )}
           {github && (
-            <StyledLink rel="noreferrer" target="_blank" href={github}>
+            <StyledLink
+              aria-label="external link to github page"
+              rel="noreferrer"
+              target="_blank"
+              href={github}
+            >
               <GhIcon size={45} />
             </StyledLink>
           )}
