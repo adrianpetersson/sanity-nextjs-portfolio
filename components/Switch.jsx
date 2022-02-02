@@ -3,7 +3,11 @@ import styled from 'styled-components';
 
 function Switch({ theme, toggleTheme, mobile }) {
   return (
-    <Toggler mobile={mobile} onClick={toggleTheme}>
+    <Toggler
+      aria-label="Dark mode toggle"
+      mobile={mobile}
+      onClick={toggleTheme}
+    >
       <MoonIcon animate={theme} />
       <Icon animate={theme} />
     </Toggler>
