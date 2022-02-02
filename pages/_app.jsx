@@ -8,6 +8,12 @@ function App({ Component, pageProps }) {
       <Normalize />
       <Head>
         <title>Adrian Petersson portfolio</title>
+        <meta httpEquiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta
+          name="description"
+          content="Frontend and UX portfolio of Adrian Petersson"
+        />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <Component {...pageProps} />
     </>
