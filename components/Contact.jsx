@@ -12,13 +12,19 @@ function Contact() {
     <Section id="contact">
       <StyledForm onSubmit={handleSubmit}>
         <h2>Contact me</h2>
-        <label htmlFor="name">Name</label>
-        <StyledInput type="text" name="name" />
-        <label htmlFor="email">Email</label>
-        <StyledInput type="email" name="email" />
+        <label htmlFor="name">
+          Name
+          <StyledInput type="text" name="name" />
+        </label>
+        <label htmlFor="email">
+          Email
+          <StyledInput type="email" name="email" />
+        </label>
         <ValidationError prefix="Email" field="email" errors={state.errors} />
-        <label htmlFor="message">Message</label>
-        <StyledTextArea id="message" name="message" />
+        <label htmlFor="message">
+          Message
+          <StyledTextArea id="message" name="message" />
+        </label>
         <ValidationError
           prefix="Message"
           field="message"

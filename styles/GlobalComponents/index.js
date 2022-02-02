@@ -22,7 +22,7 @@ export const Label = styled.span`
   font-size: 13px;
   display: inline-block;
   margin-right: 14px;
-  color: #757575;
+  color: black;
   background: #f2f2f2;
   padding: 5px 10px;
   line-height: 22px;
