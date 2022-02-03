@@ -1,22 +1,35 @@
 import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
+import { motion } from 'framer-motion';
 import profilepic from '../assets/images/Heroimage.png';
 import { Section } from '../styles/GlobalComponents';
 import breakpoint from '../utility/breakpoints';
+import { popup, sweepin } from '../utility/animations';
 
 function HeroBanner() {
   return (
     <HeroSection>
       <OverlapPositioning>
-        <ImageWrapper>
+        <ImageWrapper
+          as={motion.div}
+          variants={popup}
+          initial="hidden"
+          animate="visible"
+        >
           <StyledImage
+            priority
             layout="responsive"
             src={profilepic}
             alt="Picture of Adrian Petersson"
           />
         </ImageWrapper>
-        <TextWrapper>
+        <TextWrapper
+          as={motion.div}
+          variants={sweepin}
+          initial="hidden"
+          animate="visible"
+        >
           <Header>Hi, Im Adrian Petersson.</Header>
           <HorizontalDivider />
           <SubHeader>
