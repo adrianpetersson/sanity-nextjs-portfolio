@@ -2,6 +2,8 @@ import React from 'react';
 import styled from 'styled-components';
 import { FiExternalLink } from 'react-icons/fi';
 import { FaGithubSquare } from 'react-icons/fa';
+import { motion, useAnimation } from 'framer-motion';
+import { useInView } from 'react-intersection-observer';
 import { urlFor } from '../sanity';
 import { Button } from '.';
 import { Label } from '../styles/GlobalComponents';
@@ -17,8 +19,29 @@ function ProjectCard({
   link,
   github,
 }) {
+  const { ref, inView } = useInView({
+    threshold: 0.8,
+    triggerOnce: true,
+  });
+
+  const animation = useAnimation();
+
+  if (inView) {
+    animation.start({
+      y: 0,
+      scale: 1,
+      opacity: 1,
+      transition: {
+        type: 'spring',
+        duration: 0.2,
+      },
+    });
+  }
+  if (!inView) {
+    animation.start({ scale: 0.95, opacity: 0.3, y: 30 });
+  }
   return (
-    <Card key={id}>
+    <Card ref={ref} animate={animation} as={motion.article} key={id}>
       <ImageContainer>
         <StyledLabel>{type}</StyledLabel>
         <StyledImage src={urlFor(mainImage).url()} alt={title} />
