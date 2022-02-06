@@ -2,7 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Image from 'next/image';
 import { motion } from 'framer-motion';
-import profilepic from '../assets/images/Heroimage.png';
+import profilepic from '../assets/images/Heroimage.webp';
 import { Section } from '../styles/GlobalComponents';
 import breakpoint from '../utility/breakpoints';
 import { popup, sweepin } from '../utility/animations';
