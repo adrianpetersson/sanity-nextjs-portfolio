@@ -6,8 +6,9 @@ import breakpoint from '../utility/breakpoints';
 function ProjectSection({ project }) {
   return (
     <GridContainer id="projects">
-      {project?.map((item) => (
+      {project?.map((item, index) => (
         <ProjectCard
+          index={index}
           key={item.id}
           title={item.title}
           description={item.description}

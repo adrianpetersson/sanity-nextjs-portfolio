@@ -18,6 +18,7 @@ function ProjectCard({
   slug,
   link,
   github,
+  index,
 }) {
   const { ref, inView } = useInView({
     threshold: 0.8,
@@ -34,6 +35,7 @@ function ProjectCard({
       transition: {
         type: 'spring',
         duration: 0.2,
+        delay: index * 0.2,
       },
     });
   }
