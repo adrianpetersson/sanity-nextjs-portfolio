@@ -1,4 +1,4 @@
-import styled, { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from 'styled-components';
 
 export const lightTheme = {
   body: '#fff',
@@ -59,10 +59,10 @@ hr {
 }
 input, textarea, button {font-family: inherit}
 ul,li{
+margin: 0;
+padding: 0;
 list-style:none;
 display:inline-block;
 font-size:21px;
 line-height:34px;
 }`;
-
-

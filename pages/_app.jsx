@@ -14,6 +14,7 @@ function App({ Component, pageProps }) {
           content="Frontend and UX portfolio of Adrian Petersson"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta name="theme-color" content="hsl(225, 10%, 8%, 1)" />
       </Head>
       <Component {...pageProps} />
     </>

@@ -66,6 +66,7 @@ const BulletList = styled.ul`
   li {
     display: list-item;
     margin-bottom: 1rem;
+    list-style-position: inside;
     list-style-type: square;
   }
 `;
