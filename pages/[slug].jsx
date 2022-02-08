@@ -7,7 +7,7 @@ import { Section, Label } from '../styles/GlobalComponents';
 import { Layout } from '../layout/Layout';
 import { defaultSerializer } from '../utility/serializer';
 
-const project = ({ title, mainImage, description, body }) => (
+const project = ({ title, mainImage, type, description, body }) => (
   <Layout>
     <Section padding="80px 0px 40px 0px" blogstyle>
       <article>
@@ -16,7 +16,7 @@ const project = ({ title, mainImage, description, body }) => (
           <Heading>{title}</Heading>
           <p>{description}</p>
           <InfoBar>
-            <Label>type</Label>
+            <Label>{type}</Label>
             <Label>Year</Label>
             <Label>Role</Label>
           </InfoBar>
@@ -36,6 +36,7 @@ export const getServerSideProps = async (pageContext) => {
   const query = `*[ _type == "project" && slug.current == $pageSlug] [0]{
 title,
 mainImage,
+type,
 description,
 body
 }`;
@@ -52,6 +53,7 @@ body
     props: {
       title: projectData.title,
       mainImage: projectData.mainImage,
+      type: projectData.type,
       description: projectData.description,
       body: projectData.body,
     },
