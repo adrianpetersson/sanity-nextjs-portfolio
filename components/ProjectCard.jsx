@@ -46,7 +46,7 @@ function ProjectCard({
     <Card ref={ref} animate={animation} as={motion.article} key={id}>
       <ImageContainer>
         <StyledLabel>{type}</StyledLabel>
-        <StyledImage src={urlFor(mainImage).url()} alt={title} />
+        <StyledImage src={urlFor(mainImage).auto('format').url()} alt={title} />
       </ImageContainer>
       <InfoContainer>
         <div />
