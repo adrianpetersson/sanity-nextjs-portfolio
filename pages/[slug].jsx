@@ -12,7 +12,7 @@ const project = ({ title, mainImage, description, body }) => (
     <Section padding="80px 0px 40px 0px" blogstyle>
       <article>
         <ArticleHeader>
-          <HeroImage src={urlFor(mainImage).url()} alt="" />
+          <HeroImage src={urlFor(mainImage).auto('format').url()} alt="" />
           <Heading>{title}</Heading>
           <p>{description}</p>
           <InfoBar>

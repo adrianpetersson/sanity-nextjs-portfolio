@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/prefer-default-export */
 import styled from 'styled-components';
 import { urlFor } from '../sanity';
@@ -17,7 +18,7 @@ export function defaultSerializer(body) {
       image(props) {
         return (
           <ImageContainer>
-            <HeroImage src={urlFor(props.node.asset).url()} />
+            <HeroImage src={urlFor(props.node.asset).auto('format').url()} />
           </ImageContainer>
         );
       },
