@@ -75,7 +75,7 @@ function ProjectCard({
               <GhIcon size={45} />
             </StyledLink>
           )}
-          <Button link={slug.current}>Read more..</Button>
+          {slug?.current && <Button link={slug.current}>Read more..</Button>}
         </LinkBar>
       </InfoContainer>
     </Card>
