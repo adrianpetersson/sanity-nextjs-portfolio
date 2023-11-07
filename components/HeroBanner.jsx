@@ -1,11 +1,11 @@
+import { motion } from 'framer-motion';
+import Image from 'next/image';
 import React from 'react';
 import styled from 'styled-components';
-import Image from 'next/image';
-import { motion } from 'framer-motion';
 import profilepic from '../assets/images/Heroimage.webp';
 import { Section } from '../styles/GlobalComponents';
-import breakpoint from '../utility/breakpoints';
 import { popup, sweepin } from '../utility/animations';
+import breakpoint from '../utility/breakpoints';
 
 function HeroBanner() {
   return (
@@ -32,9 +32,7 @@ function HeroBanner() {
         >
           <Header>Hi, Im Adrian Petersson.</Header>
           <HorizontalDivider />
-          <SubHeader>
-            Frontend Developer & UX-Designer at Fitness24Seven
-          </SubHeader>
+          <SubHeader>Frontend Developer at Fitness24Seven</SubHeader>
         </TextWrapper>
       </OverlapPositioning>
     </HeroSection>

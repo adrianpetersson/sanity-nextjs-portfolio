@@ -12,7 +12,7 @@ function ProjectSection({ project }) {
           key={item.id}
           title={item.title}
           description={item.description}
-          type={item.type}
+          year={item.year}
           mainImage={item.mainImage}
           link={item.link}
           github={item.github}

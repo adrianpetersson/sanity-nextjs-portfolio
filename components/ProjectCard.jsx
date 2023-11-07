@@ -13,8 +13,8 @@ function ProjectCard({
   id,
   mainImage,
   title,
+  year,
   description,
-  type,
   slug,
   link,
   github,
@@ -45,7 +45,7 @@ function ProjectCard({
   return (
     <Card ref={ref} animate={animation} as={motion.article} key={id}>
       <ImageContainer>
-        <StyledLabel>{type}</StyledLabel>
+        <StyledLabel>{year}</StyledLabel>
         <StyledImage src={urlFor(mainImage).auto('format').url()} alt={title} />
       </ImageContainer>
       <InfoContainer>
