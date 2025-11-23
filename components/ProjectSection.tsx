@@ -1,5 +1,5 @@
 import React from 'react';
-import { ProjectCard } from '.';
+import { ProjectCard } from './ProjectCard';
 
 interface Project {
   id?: string;
@@ -25,7 +25,6 @@ function ProjectSection({ project }: ProjectSectionProps): React.ReactElement {
     >
       {project?.map((item, index) => (
         <ProjectCard
-          index={index}
           key={item.id || item._id || index}
           title={item.title}
           description={item.description}

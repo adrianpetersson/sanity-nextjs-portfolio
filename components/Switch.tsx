@@ -1,11 +1,30 @@
+'use client';
+
+import { useEffect, useState } from 'react';
 import { FiSun, FiMoon } from 'react-icons/fi';
 
-interface SwitchProps {
-  theme: string;
-  toggleTheme: () => void;
-}
+function Switch(): React.ReactElement {
+  const [theme, setTheme] = useState('light');
 
-function Switch({ theme, toggleTheme }: SwitchProps): React.ReactElement {
+  useEffect(() => {
+    const theme = localStorage.getItem('theme');
+    setTheme(theme || 'light');
+    if (theme === 'dark') {
+      document.documentElement.classList.add('dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    if (document.documentElement.classList.contains('dark')) {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      setTheme('light');
+    } else {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      setTheme('dark');
+    }
+  };
   return (
     <button
       type="button"

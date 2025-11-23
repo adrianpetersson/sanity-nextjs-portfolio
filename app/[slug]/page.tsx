@@ -1,6 +1,7 @@
 import PortableText from '@sanity/block-content-to-react';
 import { sanityClient, urlFor } from '../../sanity';
 import { defaultSerializer } from '../../utility/serializer';
+import Image from 'next/image';
 
 interface ProjectData {
   title: string;
@@ -38,7 +39,9 @@ body
     <section className="flex flex-col items-center justify-center mx-auto max-w-[790px] relative pt-20 pb-10">
       <article>
         <div>
-          <img
+          <Image
+            width={500}
+            height={300}
             src={urlFor(mainImage).auto('format').url() || ''}
             alt=""
             className="max-w-full max-h-full"

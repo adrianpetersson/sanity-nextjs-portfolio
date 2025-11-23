@@ -1,9 +1,6 @@
-import {
-  Contact,
-  HeroBanner,
-  ProjectSection,
-  StackSection,
-} from '../components';
+import Contact from '@/components/Contact';
+import HeroBanner from '@/components/HeroBanner';
+import ProjectSection from '@/components/ProjectSection';
 import { sanityClient } from '../sanity';
 
 interface Project {
@@ -35,7 +32,6 @@ export default async function Home() {
       <HeroBanner />
       <ProjectSection project={project} />
       {/* <StackSection about={about} /> */}
-      <Contact />
     </>
   );
 }

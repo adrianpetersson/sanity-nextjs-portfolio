@@ -1,27 +1,14 @@
-'use client';
-
-import { useEffect } from 'react';
-import useDarkMode from '../hooks/useDarkMode';
-import { Nav, Footer } from '../components';
+import Navbar from '@/components/Navbar';
+import { Footer } from '@/components/Footer';
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 export function Layout({ children }: LayoutProps): React.ReactElement {
-  const [theme, toggleTheme] = useDarkMode();
-
-  useEffect(() => {
-    if (theme === 'dark') {
-      document.body.classList.add('dark');
-    } else {
-      document.body.classList.remove('dark');
-    }
-  }, [theme]);
-
   return (
     <>
-      <Nav theme={theme} toggleTheme={toggleTheme} />
+      <Navbar />
       <div className="z-[1] w-full max-w-[1300px] mx-auto px-[50px] md:px-[30px]">
         <main>{children}</main>
       </div>

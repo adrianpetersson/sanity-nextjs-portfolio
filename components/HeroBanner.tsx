@@ -32,7 +32,7 @@ function HeroBanner(): React.ReactElement {
           <h1 className="font-black text-hero-lg m-0">
             Hi, Im Adrian Petersson.
           </h1>
-          <hr className="border-4 border-accent rounded-[2px]" />
+
           <h2 className="font-black text-hero-md">
             Frontend Developer at Fitness24Seven
           </h2>
