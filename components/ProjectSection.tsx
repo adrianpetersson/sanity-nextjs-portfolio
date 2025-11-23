@@ -1,7 +1,23 @@
 import React from 'react';
 import { ProjectCard } from '.';
 
-function ProjectSection({ project }) {
+interface Project {
+  id?: string;
+  _id?: string;
+  title: string;
+  description: string;
+  year?: string;
+  mainImage: any;
+  link?: string;
+  github?: string;
+  slug?: { current: string };
+}
+
+interface ProjectSectionProps {
+  project: Project[];
+}
+
+function ProjectSection({ project }: ProjectSectionProps): React.ReactElement {
   return (
     <section
       id="projects"
@@ -10,7 +26,7 @@ function ProjectSection({ project }) {
       {project?.map((item, index) => (
         <ProjectCard
           index={index}
-          key={item.id}
+          key={item.id || item._id || index}
           title={item.title}
           description={item.description}
           year={item.year}

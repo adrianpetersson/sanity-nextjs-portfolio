@@ -9,6 +9,18 @@ import Image from 'next/image';
 import { urlFor } from '../sanity';
 import { Button } from '.';
 
+interface ProjectCardProps {
+  id?: string;
+  mainImage: any;
+  title: string;
+  year?: string;
+  description: string;
+  slug?: { current: string };
+  link?: string;
+  github?: string;
+  index: number;
+}
+
 function ProjectCard({
   id,
   mainImage,
@@ -19,7 +31,7 @@ function ProjectCard({
   link,
   github,
   index,
-}) {
+}: ProjectCardProps): React.ReactElement {
   const { ref, inView } = useInView({
     threshold: 0.8,
     triggerOnce: true,
@@ -61,7 +73,7 @@ function ProjectCard({
         <Image
           width={600}
           height={200}
-          src={urlFor(mainImage).auto('format').url()}
+          src={urlFor(mainImage).auto('format').url() || ''}
           alt={title}
           className="overflow-hidden w-full h-full object-cover transition-all duration-300 ease-in-out lg:w-[600px] lg:h-[200px] group-hover:scale-150 group-hover:-rotate-[10deg]"
         />

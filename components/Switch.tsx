@@ -1,6 +1,11 @@
 import { FiSun, FiMoon } from 'react-icons/fi';
 
-function Switch({ theme, toggleTheme }) {
+interface SwitchProps {
+  theme: string;
+  toggleTheme: () => void;
+}
+
+function Switch({ theme, toggleTheme }: SwitchProps): React.ReactElement {
   return (
     <button
       type="button"

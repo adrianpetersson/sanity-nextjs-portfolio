@@ -3,7 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import LogoSvg from '../assets/images/logo.svg';
 
-function Logo({ size }) {
+interface LogoProps {
+  size: number;
+}
+
+function Logo({ size }: LogoProps): React.ReactElement {
   return (
     <Link href="/">
       <Image src={LogoSvg} height={size} width={size} alt="Logo" />

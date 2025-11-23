@@ -1,12 +1,17 @@
 import '../styles/globals.css';
 import { Layout } from '../layout/Layout';
+import type { Metadata } from 'next';
 
-export const metadata = {
+export const metadata: Metadata = {
   title: 'Adrian Petersson portfolio',
   description: 'Frontend and UX portfolio of Adrian Petersson',
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
   return (
     <html lang="en">
       <head>

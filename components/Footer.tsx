@@ -1,6 +1,6 @@
 import React from 'react';
 
-function Footer() {
+function Footer(): React.ReactElement {
   return (
     <footer className="relative bg-light-container dark:bg-dark-container text-black dark:text-white text-center h-[20vh] flex items-center justify-center w-full">
       <p className="text-base leading-[25px] max-w-[50%]">

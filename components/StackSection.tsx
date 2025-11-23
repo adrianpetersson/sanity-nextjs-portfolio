@@ -14,8 +14,9 @@ import { FaSass } from 'react-icons/fa';
 import PortableText from '@sanity/block-content-to-react';
 import { IconContext } from 'react-icons';
 import { sanityClient } from '../sanity';
+import { IconType } from 'react-icons';
 
-const icons = [
+const icons: IconType[] = [
   SiTailwindcss,
   SiReact,
   SiJavascript,
@@ -25,7 +26,16 @@ const icons = [
   FaSass,
 ];
 
-function StackSection({ about }) {
+interface About {
+  body: any[];
+  [key: string]: any;
+}
+
+interface StackSectionProps {
+  about: About[];
+}
+
+function StackSection({ about }: StackSectionProps): React.ReactElement {
   const { body } = about[0];
   return (
     <section

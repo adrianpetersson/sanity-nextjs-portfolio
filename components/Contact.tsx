@@ -2,7 +2,7 @@
 import React from 'react';
 import { useForm, ValidationError } from '@formspree/react';
 
-function Contact() {
+function Contact(): React.ReactElement {
   const [state, handleSubmit] = useForm('xqkneyvp');
 
   return (

@@ -2,8 +2,20 @@ import PortableText from '@sanity/block-content-to-react';
 import { sanityClient, urlFor } from '../../sanity';
 import { defaultSerializer } from '../../utility/serializer';
 
-export default async function projectPage({ params }) {
-  const pageSlug = params.slug;
+interface ProjectData {
+  title: string;
+  mainImage: any;
+  type: string;
+  description: string;
+  body: any[];
+}
+
+interface ProjectPageProps {
+  params: Promise<{ slug: string }>;
+}
+
+export default async function projectPage({ params }: ProjectPageProps) {
+  const { slug: pageSlug } = await params;
   const query = `*[ _type == "project" && slug.current == $pageSlug] [0]{
 title,
 mainImage,
@@ -12,7 +24,9 @@ description,
 body
 }`;
 
-  const projectData = await sanityClient.fetch(query, { pageSlug });
+  const projectData: ProjectData | null = await sanityClient.fetch(query, {
+    pageSlug,
+  });
 
   if (!projectData) {
     return <div>Project not found</div>;
@@ -25,7 +39,7 @@ body
       <article>
         <div>
           <img
-            src={urlFor(mainImage).auto('format').url()}
+            src={urlFor(mainImage).auto('format').url() || ''}
             alt=""
             className="max-w-full max-h-full"
           />

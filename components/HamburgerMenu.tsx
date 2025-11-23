@@ -2,7 +2,7 @@
 import React, { useState } from 'react';
 import Link from 'next/link';
 
-function HamburgerMenu() {
+function HamburgerMenu(): React.ReactElement {
   const [showMenuNav, setShowMenuNav] = useState(false);
 
   return (

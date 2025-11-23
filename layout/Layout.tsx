@@ -4,7 +4,11 @@ import { useEffect } from 'react';
 import useDarkMode from '../hooks/useDarkMode';
 import { Nav, Footer } from '../components';
 
-export function Layout({ children }) {
+interface LayoutProps {
+  children: React.ReactNode;
+}
+
+export function Layout({ children }: LayoutProps): React.ReactElement {
   const [theme, toggleTheme] = useDarkMode();
 
   useEffect(() => {

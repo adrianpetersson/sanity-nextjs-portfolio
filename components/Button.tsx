@@ -1,7 +1,12 @@
 import React from 'react';
 import Link from 'next/link';
 
-function Button({ link, children }) {
+interface ButtonProps {
+  link: string;
+  children: React.ReactNode;
+}
+
+function Button({ link, children }: ButtonProps) {
   return (
     <Link
       href={link}

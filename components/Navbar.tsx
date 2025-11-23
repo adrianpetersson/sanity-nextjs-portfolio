@@ -5,7 +5,12 @@ import Link from 'next/link';
 import Logo from './Logo';
 import { HamburgerMenu, Switch } from '.';
 
-function Navbar({ toggleTheme, theme }) {
+interface NavbarProps {
+  toggleTheme: () => void;
+  theme: string;
+}
+
+function Navbar({ toggleTheme, theme }: NavbarProps): React.ReactElement {
   const [colorChange, setColorChange] = useState(false);
 
   const handleScroll = () => {
@@ -24,7 +29,7 @@ function Navbar({ toggleTheme, theme }) {
       } z-[999] fixed w-full h-20 flex items-center justify-center`}
     >
       <div className="z-[1] w-full max-w-[1300px] mx-auto px-[50px] md:px-[30px] flex justify-between items-center h-20">
-        <Logo size="60" />
+        <Logo size={60} />
         <Switch theme={theme} toggleTheme={toggleTheme} />
         <HamburgerMenu />
         <div className="hidden lg:flex lg:justify-end lg:items-center">

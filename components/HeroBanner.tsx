@@ -6,7 +6,7 @@ import React from 'react';
 import profilepic from '../assets/images/Heroimage.webp';
 import { popup, sweepin } from '../utility/animations';
 
-function HeroBanner() {
+function HeroBanner(): React.ReactElement {
   return (
     <section className="flex flex-col items-center justify-center mx-auto max-w-[1300px] relative p-0 py-20 sm:py-[100px] lg:py-[100px_0_70px_0] z-[11]">
       <div className="w-full relative lg:flex lg:flex-row-reverse lg:justify-between lg:items-center">

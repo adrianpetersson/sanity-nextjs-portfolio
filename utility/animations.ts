@@ -1,5 +1,7 @@
 /* eslint-disable import/prefer-default-export */
-export const popup = {
+import { Variants } from 'framer-motion';
+
+export const popup: Variants = {
   hidden: { y: 100, opacity: 0 },
   visible: {
     y: 0,
@@ -13,7 +15,7 @@ export const popup = {
   },
 };
 
-export const sweepin = {
+export const sweepin: Variants = {
   hidden: { x: -200, opacity: 0 },
   visible: {
     x: 0,
@@ -27,7 +29,7 @@ export const sweepin = {
   },
 };
 
-export const childAnimation = {
+export const childAnimation: Variants = {
   hidden: { x: -100, opacity: 0 },
   visible: { x: 0, opacity: 1 },
   transition: {

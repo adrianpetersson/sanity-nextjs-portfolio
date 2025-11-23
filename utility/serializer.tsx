@@ -2,9 +2,15 @@
 /* eslint-disable import/prefer-default-export */
 import { urlFor } from '../sanity';
 
-export function defaultSerializer(body) {
+interface SerializerProps {
+  children?: React.ReactNode;
+  node?: any;
+  type?: string;
+}
+
+export function defaultSerializer(body?: any) {
   const serializer = {
-    list: (props) => {
+    list: (props: any) => {
       const { type } = props;
       const bullet = type === 'bullet';
       if (bullet) {
@@ -16,20 +22,20 @@ export function defaultSerializer(body) {
       }
       return <ol>{props.children}</ol>;
     },
-    listItem: (props) => <li>{props.children}</li>,
+    listItem: (props: any) => <li>{props.children}</li>,
     types: {
-      image(props) {
+      image(props: any) {
         return (
           <div className="flex items-center justify-center mt-2.5 mr-2.5">
             <img
-              src={urlFor(props.node.asset).auto('format').url()}
+              src={urlFor(props.node.asset).auto('format').url() || ''}
               alt=""
               className="max-w-full max-h-full"
             />
           </div>
         );
       },
-      block(props) {
+      block(props: any) {
         switch (props.node.style) {
           case 'h2':
             return (
