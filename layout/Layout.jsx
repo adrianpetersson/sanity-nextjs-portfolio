@@ -1,23 +1,27 @@
-/* eslint-disable import/prefer-default-export */
-import { ThemeProvider } from 'styled-components';
-import useDarkMode from '../hooks/useDarkMode';
+'use client';
 
+import { useEffect } from 'react';
+import useDarkMode from '../hooks/useDarkMode';
 import { Nav, Footer } from '../components';
-import { GlobalStyles, darkTheme, lightTheme } from '../styles/theme.config';
-import { Container } from '../styles/GlobalComponents';
 
 export function Layout({ children }) {
   const [theme, toggleTheme] = useDarkMode();
-  const themeMode = theme === 'light' ? lightTheme : darkTheme;
+
+  useEffect(() => {
+    if (theme === 'dark') {
+      document.body.classList.add('dark');
+    } else {
+      document.body.classList.remove('dark');
+    }
+  }, [theme]);
 
   return (
-    <ThemeProvider theme={themeMode}>
-      <GlobalStyles />
+    <>
       <Nav theme={theme} toggleTheme={toggleTheme} />
-      <Container>
+      <div className="z-[1] w-full max-w-[1300px] mx-auto px-[50px] md:px-[30px]">
         <main>{children}</main>
-      </Container>
+      </div>
       <Footer />
-    </ThemeProvider>
+    </>
   );
 }

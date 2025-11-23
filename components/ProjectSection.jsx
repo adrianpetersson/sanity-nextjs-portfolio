@@ -1,11 +1,12 @@
 import React from 'react';
-import styled from 'styled-components';
 import { ProjectCard } from '.';
-import breakpoint from '../utility/breakpoints';
 
 function ProjectSection({ project }) {
   return (
-    <GridContainer id="projects">
+    <section
+      id="projects"
+      className="grid w-full grid-cols-1 gap-4 mb-8 lg:grid-cols-2 lg:auto-rows-fr"
+    >
       {project?.map((item, index) => (
         <ProjectCard
           index={index}
@@ -19,18 +20,7 @@ function ProjectSection({ project }) {
           slug={item.slug}
         />
       ))}
-    </GridContainer>
+    </section>
   );
 }
-const GridContainer = styled.section`
-  display: grid;
-  width: 100%;
-  grid-template-columns: 1fr;
-  grid-gap: 1rem;
-  margin-bottom: 2rem;
-  @media only screen and ${breakpoint.device.lg} {
-    grid-template-columns: repeat(2, 1fr);
-    grid-auto-rows: 1fr;
-  }
-`;
 export default ProjectSection;

@@ -1,10 +1,9 @@
+'use client';
+
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
-import styled from 'styled-components';
 import Logo from './Logo';
-import { Container } from '../styles/GlobalComponents';
 import { HamburgerMenu, Switch } from '.';
-import breakpoint from '../utility/breakpoints';
 
 function Navbar({ toggleTheme, theme }) {
   const [colorChange, setColorChange] = useState(false);
@@ -19,65 +18,31 @@ function Navbar({ toggleTheme, theme }) {
   });
 
   return (
-    <Nav visible={colorChange}>
-      <NavContainer>
+    <nav
+      className={`transition-all duration-300 ease-in-out ${
+        colorChange ? 'bg-light-container dark:bg-dark-container' : ''
+      } z-[999] fixed w-full h-20 flex items-center justify-center`}
+    >
+      <div className="z-[1] w-full max-w-[1300px] mx-auto px-[50px] md:px-[30px] flex justify-between items-center h-20">
         <Logo size="60" />
         <Switch theme={theme} toggleTheme={toggleTheme} />
         <HamburgerMenu />
-        <NavMenu>
+        <div className="hidden lg:flex lg:justify-end lg:items-center">
           <ul>
-            <NavLinks>
-              <Link href="/#projects">
-                <a>Projects</a>
-              </Link>
-            </NavLinks>
-            <NavLinks>
-              <Link href="/#about">
-                <a>About</a>
-              </Link>
-            </NavLinks>
-            <NavLinks>
-              <Link href="/#about">
-                <a>Contact</a>
-              </Link>
-            </NavLinks>
+            <li className="inline-block mr-12 last:mr-0">
+              <Link href="/#projects">Projects</Link>
+            </li>
+            <li className="inline-block mr-12 last:mr-0">
+              <Link href="/#about">About</Link>
+            </li>
+            <li className="inline-block mr-12 last:mr-0">
+              <Link href="/#contact">Contact</Link>
+            </li>
           </ul>
-        </NavMenu>
-      </NavContainer>
-    </Nav>
+        </div>
+      </div>
+    </nav>
   );
 }
-
-const Nav = styled.nav`
-  transition: ease-in-out 0.3s;
-  background: ${({ theme, visible }) => (visible ? theme.container : '')};
-  z-index: 999;
-  position: fixed;
-  width: 100%;
-  height: 80px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-const NavContainer = styled(Container)`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  height: 80px;
-
-  ${Container}
-`;
-const NavLinks = styled.li`
-  &:not(:last-child) {
-    margin-right: 3rem;
-  }
-`;
-const NavMenu = styled.div`
-display:none;
-@media only screen and ${breakpoint.device.lg} {
-justify-content:flex-end;
-display:flex;
-align-items:center;
-`;
 
 export default Navbar;

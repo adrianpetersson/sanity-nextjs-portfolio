@@ -1,31 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
 function Footer() {
   return (
-    <FooterSection>
-      <FooterText>
+    <footer className="relative bg-light-container dark:bg-dark-container text-black dark:text-white text-center h-[20vh] flex items-center justify-center w-full">
+      <p className="text-base leading-[25px] max-w-[50%]">
         Designed and developed by Adrian Petersson {new Date().getFullYear()}
-      </FooterText>
-    </FooterSection>
+      </p>
+    </footer>
   );
 }
-
-const FooterText = styled.p`
-  font-size: 16px;
-  line-height: 25px;
-  max-width: 50%;
-`;
-const FooterSection = styled.footer`
-  position: relative;
-  background: {({theme}) => theme.container}
-  color: {({theme}) => theme.text}
-  text-align: center;
-  height: 20vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-`;
 
 export default Footer;

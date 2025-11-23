@@ -1,11 +1,10 @@
 {
   // Configuration for JavaScript files
-  "extends":["airbnb","prettier",
-    "next/core-web-vitals"
-  ],
-  "plugins":["prettier"],
+  "extends": ["prettier", "next/core-web-vitals"],
+  "plugins": ["prettier"],
   "rules": {
-    "no-console":"off",
+    "no-console": "off",
+    "import/no-cycle": "warn",
     "prettier/prettier": [
       "error",
       {
@@ -13,10 +12,13 @@
         "endOfLine": "auto"
       }
     ],
-    "jsx-a11y/anchor-is-valid": [ "error", {
-      "components": [ "Link" ],
-      "specialLink": [ "hrefLeft", "hrefRight" ],
-      "aspects": [ "invalidHref", "preferButton" ]
-    }]
+    "jsx-a11y/anchor-is-valid": [
+      "error",
+      {
+        "components": ["Link"],
+        "specialLink": ["hrefLeft", "hrefRight"],
+        "aspects": ["invalidHref", "preferButton"]
+      }
+    ]
   }
 }

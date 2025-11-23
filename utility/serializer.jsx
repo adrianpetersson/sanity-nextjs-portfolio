@@ -1,6 +1,5 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable import/prefer-default-export */
-import styled from 'styled-components';
 import { urlFor } from '../sanity';
 
 export function defaultSerializer(body) {
@@ -9,7 +8,11 @@ export function defaultSerializer(body) {
       const { type } = props;
       const bullet = type === 'bullet';
       if (bullet) {
-        return <BulletList>{props.children}</BulletList>;
+        return (
+          <ul className="[&_li]:list-item [&_li]:mb-4 [&_li]:list-inside [&_li]:list-square">
+            {props.children}
+          </ul>
+        );
       }
       return <ol>{props.children}</ol>;
     },
@@ -17,19 +20,38 @@ export function defaultSerializer(body) {
     types: {
       image(props) {
         return (
-          <ImageContainer>
-            <HeroImage src={urlFor(props.node.asset).auto('format').url()} />
-          </ImageContainer>
+          <div className="flex items-center justify-center mt-2.5 mr-2.5">
+            <img
+              src={urlFor(props.node.asset).auto('format').url()}
+              alt=""
+              className="max-w-full max-h-full"
+            />
+          </div>
         );
       },
       block(props) {
         switch (props.node.style) {
           case 'h2':
-            return <Title {...body}>{props.children}</Title>;
+            return (
+              <h2 className="text-[30px] mt-4 mb-2.5" {...body}>
+                {props.children}
+              </h2>
+            );
           case 'h3':
-            return <SubTitle {...body}>{props.children}</SubTitle>;
+            return (
+              <h3 className="text-[22px] mt-4 mb-5" {...body}>
+                {props.children}
+              </h3>
+            );
           case 'label':
-            return <SectionLabel {...body}>{props.children}</SectionLabel>;
+            return (
+              <span
+                className="block text-[13px] bg-[#ebebeb] my-5 mx-0 py-1.5 px-2.5 rounded-[3px] text-[#757575]"
+                {...body}
+              >
+                {props.children}
+              </span>
+            );
           case 'normal':
             return <p {...body}>{props.children}</p>;
           default:
@@ -40,42 +62,3 @@ export function defaultSerializer(body) {
   };
   return serializer;
 }
-const HeroImage = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`;
-const ImageContainer = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-top: 10px;
-  margin-right: 10px;
-`;
-
-const Title = styled.h2`
-  font-size: 30px;
-  margin-top: 16px;
-  margin-bottom: 10px;
-`;
-const SubTitle = styled.h3`
-  font-size: 22px;
-  margin-top: 16px;
-  margin-bottom: 20px;
-`;
-const BulletList = styled.ul`
-  li {
-    display: list-item;
-    margin-bottom: 1rem;
-    list-style-position: inside;
-    list-style-type: square;
-  }
-`;
-const SectionLabel = styled.span`
-  display: block;
-  font-size: 13px;
-  background: #ebebeb;
-  margin: 20px 0px 10px 0;
-  padding: 5px 10px;
-  border-radius: 3px;
-  color: #757575;
-`;

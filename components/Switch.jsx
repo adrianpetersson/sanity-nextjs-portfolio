@@ -1,53 +1,21 @@
 import { FiSun, FiMoon } from 'react-icons/fi';
-import styled from 'styled-components';
 
-function Switch({ theme, toggleTheme, mobile }) {
+function Switch({ theme, toggleTheme }) {
   return (
-    <Toggler
+    <button
+      type="button"
       aria-label="Dark mode toggle"
-      mobile={mobile}
       onClick={toggleTheme}
+      className="bg-dark-container dark:bg-white ml-auto mr-5 flex items-center w-[35px] h-[35px] justify-center border-none outline-none rounded cursor-pointer transition-all duration-300"
     >
-      <MoonIcon animate={theme} />
-      <Icon animate={theme} />
-    </Toggler>
+      <FiMoon
+        className={`text-accent ${theme === 'dark' ? 'opacity-0' : 'opacity-100'} text-[25px] absolute transition-all duration-1000 ease-in-out ${theme === 'light' ? '-rotate-[360deg]' : 'rotate-[270deg]'}`}
+      />
+      <FiSun
+        className={`text-accent ${theme === 'light' ? 'opacity-0' : 'opacity-100'} text-[25px] absolute transition-all duration-1000 ease-in-out ${theme === 'light' ? 'rotate-[270deg]' : '-rotate-[270deg]'}`}
+      />
+    </button>
   );
 }
-
-const MoonIcon = styled(FiMoon)`
-  color: orange;
-  opacity: ${(props) => (props.animate === 'dark' ? '0' : '1')};
-  font-size: 25px;
-  position: absolute;
-  transition: all 1s ease-in-out;
-  transform: ${(props) =>
-    props.animate === 'light' ? 'rotate(-360deg)' : 'rotate(270deg)'};
-`;
-const Icon = styled(FiSun)`
-  opacity: ${(props) => (props.animate === 'light' ? '0' : '1')};
-  font-size: 25px;
-  position: absolute;
-  color: orange;
-  transition: all 1s ease-in-out;
-  transform: ${(props) =>
-    props.animate === 'light' ? 'rotate(270deg)' : 'rotate(-270deg)'};
-`;
-const Toggler = styled.button`
-  background: ${({ theme }) => theme.modeSwitch};
-  margin-left: auto;
-  margin-right: 20px;
-  display: flex;
-  align-items: center;
-  width: 35px;
-  height: 35px;
-  align-items: center;
-  justify-content: center;
-  color: ${(props) => props.theme.toggleIcon};
-  transition: all ${(props) => props.theme.transitionTime};
-  border: none;
-  outline: none;
-  border-radius: 4px;
-  cursor: pointer;
-`;
 
 export default Switch;

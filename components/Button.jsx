@@ -1,37 +1,15 @@
 import React from 'react';
-import styled from 'styled-components';
 import Link from 'next/link';
-import breakpoint from '../utility/breakpoints';
 
 function Button({ link, children }) {
   return (
-    <Link href={link}>
-      <StyledLink>{children}</StyledLink>
+    <Link
+      href={link}
+      className="flex items-center justify-center text-[0.9rem] text-center h-10 px-5 bg-primary rounded-md text-white transition-all duration-400 hover:bg-primary-hover hover:-translate-y-[8%] lg:ml-0"
+    >
+      {children}
     </Link>
   );
 }
-
-const StyledLink = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.9rem;
-  text-align: center;
-  height: 40px;
-  padding: 0 20px;
-  background-color: #003afa;
-  box-sizing: border-box;
-  border-radius: 5px;
-  color: white;
-  transition: all 0.4s ease;
-  &:hover {
-    background: ${({ theme }) => theme.hover};
-    transform: translateY(-8%);
-    color: white;
-  }
-  @media only screen and ${breakpoint.device.lg} {
-    margin-left: unset;
-  }
-`;
 
 export default Button;

@@ -6,9 +6,7 @@ import LogoSvg from '../assets/images/logo.svg';
 function Logo({ size }) {
   return (
     <Link href="/">
-      <a>
-        <Image src={LogoSvg} height={size} width={size} alt="Logo" />
-      </a>
+      <Image src={LogoSvg} height={size} width={size} alt="Logo" />
     </Link>
   );
 }
