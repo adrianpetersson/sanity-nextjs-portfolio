@@ -1,4 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
+import { Alert } from "@/components/Alert";
 import HeroBanner from "@/components/HeroBanner";
 import ProjectSection from "@/components/ProjectSection";
 
@@ -30,6 +31,7 @@ export default async function Home() {
 
   return (
     <>
+      <Alert />
       <HeroBanner />
       <ProjectSection project={project} />
       {/* <StackSection about={about} /> */}
