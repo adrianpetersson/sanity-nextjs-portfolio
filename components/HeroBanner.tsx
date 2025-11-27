@@ -9,7 +9,7 @@ import { popup, sweepin } from "../utility/animations";
 
 function HeroBanner(): React.ReactElement {
   return (
-    <section className="relative z-[11] mx-auto flex max-w-[1300px] flex-col items-center justify-center p-0 py-20 sm:py-[100px] lg:py-[100px_0_70px_0]">
+    <section className="relative z-10 mx-auto flex flex-col items-center justify-center p-0">
       <div className="relative w-full lg:flex lg:flex-row-reverse lg:items-center lg:justify-between">
         <motion.div
           animate="visible"
@@ -30,11 +30,11 @@ function HeroBanner(): React.ReactElement {
           initial="hidden"
           variants={sweepin}
         >
-          <h1 className="text-hero-lg m-0 font-black">
+          <h1 className="mb-2 text-4xl font-black md:mb-10 md:text-7xl xl:leading-21">
             Hi, Im Adrian Petersson.
           </h1>
 
-          <h2 className="text-hero-md font-black">
+          <h2 className="text-base leading-4 font-black whitespace-nowrap md:text-3xl">
             Frontend Developer at Fitness24Seven
           </h2>
         </motion.div>
