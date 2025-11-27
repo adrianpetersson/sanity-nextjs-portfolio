@@ -1,16 +1,18 @@
-import React from 'react';
-import { ProjectCard } from './ProjectCard';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import React from "react";
+
+import { ProjectCard } from "./ProjectCard";
 
 interface Project {
-  id?: string;
   _id?: string;
-  title: string;
   description: string;
-  year?: string;
-  mainImage: any;
-  link?: string;
   github?: string;
+  id?: string;
+  link?: string;
+  mainImage: any;
   slug?: { current: string };
+  title: string;
+  year?: string;
 }
 
 interface ProjectSectionProps {
@@ -20,19 +22,19 @@ interface ProjectSectionProps {
 function ProjectSection({ project }: ProjectSectionProps): React.ReactElement {
   return (
     <section
+      className="mb-8 grid w-full grid-cols-1 gap-4 lg:auto-rows-fr lg:grid-cols-2"
       id="projects"
-      className="grid w-full grid-cols-1 gap-4 mb-8 lg:grid-cols-2 lg:auto-rows-fr"
     >
       {project?.map((item, index) => (
         <ProjectCard
-          key={item.id || item._id || index}
-          title={item.title}
           description={item.description}
-          year={item.year}
-          mainImage={item.mainImage}
-          link={item.link}
           github={item.github}
+          key={item.id || item._id || index}
+          link={item.link}
+          mainImage={item.mainImage}
           slug={item.slug}
+          title={item.title}
+          year={item.year}
         />
       ))}
     </section>

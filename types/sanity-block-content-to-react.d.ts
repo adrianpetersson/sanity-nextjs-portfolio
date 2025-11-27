@@ -1,13 +1,14 @@
-declare module '@sanity/block-content-to-react' {
-  import { ComponentType } from 'react';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+declare module "@sanity/block-content-to-react" {
+  import { ComponentType } from "react";
 
   interface BlockContentProps {
+    [key: string]: any;
     blocks: any;
-    serializers?: any;
-    projectId?: string;
     dataset?: string;
     imageOptions?: any;
-    [key: string]: any;
+    projectId?: string;
+    serializers?: any;
   }
 
   const BlockContent: ComponentType<BlockContentProps>;

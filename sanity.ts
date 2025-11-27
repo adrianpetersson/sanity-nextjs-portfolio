@@ -1,7 +1,9 @@
-import { createClient, type ClientConfig } from 'next-sanity';
-import createImageUrlBuilder from '@sanity/image-url';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import createImageUrlBuilder from "@sanity/image-url";
+import { type ClientConfig, createClient } from "next-sanity";
 
 const config: ClientConfig = {
+  apiVersion: "2023-05-03",
   /**
    * Find your project ID and dataset in `sanity.json` in your studio project.
    * These are considered “public”, but you can use environment variables
@@ -9,10 +11,9 @@ const config: ClientConfig = {
    *
    * https://nextjs.org/docs/basic-features/environment-variables
    * */
-  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || 'production',
-  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || 'ijtbu875',
-  useCdn: process.env.NODE_ENV === 'production',
-  apiVersion: '2023-05-03',
+  dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
+  projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID || "ijtbu875",
+  useCdn: process.env.NODE_ENV === "production",
   /**
    * Set useCdn to `false` if your application require the freshest possible
    * data always (potentially slightly slower and a bit more expensive).
@@ -27,7 +28,7 @@ export const sanityClient = createClient(config);
  * Read more: https://www.sanity.io/docs/image-url
  * */
 const builder = createImageUrlBuilder({
-  projectId: config.projectId || '',
-  dataset: config.dataset || '',
+  dataset: config.dataset || "",
+  projectId: config.projectId || "",
 });
 export const urlFor = (source: any) => builder.image(source);

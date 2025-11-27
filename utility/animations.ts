@@ -1,38 +1,37 @@
-/* eslint-disable import/prefer-default-export */
-import { Variants } from 'framer-motion';
+import { Variants } from "framer-motion";
 
 export const popup: Variants = {
-  hidden: { y: 100, opacity: 0 },
+  hidden: { opacity: 0, y: 100 },
   visible: {
-    y: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
       delay: 0.3,
       delayChildren: 0.5,
       staggerChildren: 0.3,
+      type: "spring",
     },
+    y: 0,
   },
 };
 
 export const sweepin: Variants = {
-  hidden: { x: -200, opacity: 0 },
+  hidden: { opacity: 0, x: -200 },
   visible: {
-    x: 0,
     opacity: 1,
     transition: {
-      type: 'spring',
       delay: 0.3,
       delayChildren: 0.5,
       staggerChildren: 0.3,
+      type: "spring",
     },
+    x: 0,
   },
 };
 
 export const childAnimation: Variants = {
-  hidden: { x: -100, opacity: 0 },
-  visible: { x: 0, opacity: 1 },
+  hidden: { opacity: 0, x: -100 },
   transition: {
-    type: 'spring',
+    type: "spring",
   },
+  visible: { opacity: 1, x: 0 },
 };

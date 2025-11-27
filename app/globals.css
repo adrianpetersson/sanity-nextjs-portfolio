@@ -1,6 +1,38 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+  --font-heading:
+    ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji",
+    "Segoe UI Symbol", "Noto Color Emoji";
+
+  --color-light-bg: #ffffff;
+  --color-dark-bg: #0a0a0a;
+  --color-accent: #0ea5e9;
+
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+
+  --radius: 0.5rem;
+}
 
 @layer base {
   html {
@@ -25,7 +57,7 @@
   }
 
   a {
-    @apply text-base no-underline cursor-pointer transition-all duration-200 ease-in-out;
+    @apply cursor-pointer text-base no-underline transition-all duration-200 ease-in-out;
   }
 
   a:hover {
@@ -33,7 +65,7 @@
   }
 
   hr {
-    @apply border-0 h-0 border-t border-b border-t-black/10 border-b-white/30;
+    @apply h-0 border-0 border-t border-b border-t-black/10 border-b-white/30;
   }
 
   input,
@@ -44,7 +76,7 @@
 
   ul,
   li {
-    @apply m-0 p-0 list-none inline-block text-[21px] leading-[34px];
+    @apply m-0 inline-block list-none p-0 text-[21px] leading-[34px];
   }
   :root {
     --background: 0 0% 100%;
@@ -153,6 +185,6 @@
     @apply border-border;
   }
   body {
-    @apply bg-light-bg text-black dark:bg-dark-bg dark:text-white;
+    @apply bg-light-bg dark:bg-dark-bg text-black dark:text-white;
   }
 }

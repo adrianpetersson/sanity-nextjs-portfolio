@@ -1,4 +1,12 @@
-import Image from 'next/image';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { ExternalLink, GithubIcon } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+
+import { Badge } from "@/components/ui/badge";
+import { urlFor } from "@/sanity";
+
+import { Button } from "./ui/button";
 import {
   Card,
   CardContent,
@@ -6,31 +14,26 @@ import {
   CardFooter,
   CardHeader,
   CardTitle,
-} from './ui/card';
-import { urlFor } from '@/sanity';
-import Link from 'next/link';
-import { Button } from './ui/button';
-import { ExternalLink, GithubIcon } from 'lucide-react';
-import { Badge } from '@/components/ui/badge';
+} from "./ui/card";
 
 interface ProjectCardProps {
-  title: string;
   description: string;
-  year?: string;
-  mainImage: any;
-  link?: string;
   github?: string;
+  link?: string;
+  mainImage: any;
   slug?: { current: string };
+  title: string;
+  year?: string;
 }
 
 export const ProjectCard = ({
-  title,
   description,
-  year,
-  mainImage,
-  link,
   github,
+  link,
+  mainImage,
   slug,
+  title,
+  year,
 }: ProjectCardProps) => {
   return (
     <Card>
@@ -39,10 +42,10 @@ export const ProjectCard = ({
           {link ? (
             <a
               aria-label="external link to website"
+              className="flex items-center gap-2 text-xl underline"
+              href={link}
               rel="noreferrer"
               target="_blank"
-              href={link}
-              className="flex underline items-center gap-2 text-xl"
             >
               {title}
               <ExternalLink size="16" />
@@ -57,23 +60,23 @@ export const ProjectCard = ({
       </CardHeader>
       <CardContent>
         <Image
-          width={600}
-          height={200}
-          src={urlFor(mainImage).auto('format').url() || ''}
           alt={title}
-          className="overflow-hidden w-full h-full object-cover transition-all duration-300 ease-in-out lg:w-[600px] lg:h-[200px] group-hover:scale-150 group-hover:-rotate-[10deg]"
+          className="h-full w-full overflow-hidden object-cover transition-all duration-300 ease-in-out group-hover:scale-150 group-hover:-rotate-[10deg] lg:h-[200px] lg:w-[600px]"
+          height={200}
+          src={urlFor(mainImage).auto("format").url() || ""}
+          width={600}
         />
       </CardContent>
       <CardFooter>
-        <div className="flex justify-between w-full">
+        <div className="flex w-full justify-between">
           <div className="flex gap-4">
             {github && (
               <a
                 aria-label="external link to github page"
+                className="flex items-center"
+                href={github}
                 rel="noreferrer"
                 target="_blank"
-                href={github}
-                className="flex items-center"
               >
                 <GithubIcon size={24} />
               </a>

@@ -1,7 +1,7 @@
-import React from 'react';
-import Image from 'next/image';
-import Link from 'next/link';
-import LogoSvg from '../assets/images/logo.svg';
+import Link from "next/link";
+import React from "react";
+
+import LogoSvg from "../assets/images/logo.svg";
 
 interface LogoProps {
   size: number;
@@ -10,7 +10,7 @@ interface LogoProps {
 function Logo({ size }: LogoProps): React.ReactElement {
   return (
     <Link href="/">
-      <Image src={LogoSvg} height={size} width={size} alt="Logo" />
+      <LogoSvg height={size} width={size} />
     </Link>
   );
 }

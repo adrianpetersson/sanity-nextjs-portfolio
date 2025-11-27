@@ -1,14 +1,16 @@
-import PortableText from '@sanity/block-content-to-react';
-import { sanityClient, urlFor } from '../../sanity';
-import { defaultSerializer } from '../../utility/serializer';
-import Image from 'next/image';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import PortableText from "@sanity/block-content-to-react";
+import Image from "next/image";
+
+import { sanityClient, urlFor } from "../../sanity";
+import { defaultSerializer } from "../../utility/serializer";
 
 interface ProjectData {
-  title: string;
-  mainImage: any;
-  type: string;
-  description: string;
   body: any[];
+  description: string;
+  mainImage: any;
+  title: string;
+  type: string;
 }
 
 interface ProjectPageProps {
@@ -25,7 +27,7 @@ description,
 body
 }`;
 
-  const projectData: ProjectData | null = await sanityClient.fetch(query, {
+  const projectData: null | ProjectData = await sanityClient.fetch(query, {
     pageSlug,
   });
 
@@ -33,36 +35,36 @@ body
     return <div>Project not found</div>;
   }
 
-  const { title, mainImage, type, description, body } = projectData;
+  const { body, description, mainImage, title, type } = projectData;
 
   return (
-    <section className="flex flex-col items-center justify-center mx-auto max-w-[790px] relative pt-20 pb-10">
+    <section className="relative mx-auto flex max-w-[790px] flex-col items-center justify-center pt-20 pb-10">
       <article>
         <div>
           <Image
-            width={500}
-            height={300}
-            src={urlFor(mainImage).auto('format').url() || ''}
             alt=""
-            className="max-w-full max-h-full"
+            className="max-h-full max-w-full"
+            height={300}
+            src={urlFor(mainImage).auto("format").url() || ""}
+            width={500}
           />
-          <h1 className="text-[clamp(30px,8vw,50px)] mb-2.5">{title}</h1>
+          <h1 className="mb-2.5 text-[clamp(30px,8vw,50px)]">{title}</h1>
           <p>{description}</p>
           <div className="my-3 mb-5 w-full">
-            <span className="w-full inline-block mr-3.5 text-black bg-[#f2f2f2] py-1.5 px-2.5 leading-[22px] rounded-[3px] mb-4 lg:w-auto">
+            <span className="mr-3.5 mb-4 inline-block w-full rounded-[3px] bg-[#f2f2f2] px-2.5 py-1.5 leading-[22px] text-black lg:w-auto">
               {type}
             </span>
-            <span className="w-full inline-block mr-3.5 text-black bg-[#f2f2f2] py-1.5 px-2.5 leading-[22px] rounded-[3px] mb-4 lg:w-auto">
+            <span className="mr-3.5 mb-4 inline-block w-full rounded-[3px] bg-[#f2f2f2] px-2.5 py-1.5 leading-[22px] text-black lg:w-auto">
               Year
             </span>
-            <span className="w-full inline-block mr-3.5 text-black bg-[#f2f2f2] py-1.5 px-2.5 leading-[22px] rounded-[3px] mb-4 lg:w-auto">
+            <span className="mr-3.5 mb-4 inline-block w-full rounded-[3px] bg-[#f2f2f2] px-2.5 py-1.5 leading-[22px] text-black lg:w-auto">
               Role
             </span>
           </div>
         </div>
         <PortableText
-          serializers={defaultSerializer()}
           blocks={body}
+          serializers={defaultSerializer()}
           {...sanityClient.config()}
         />
       </article>

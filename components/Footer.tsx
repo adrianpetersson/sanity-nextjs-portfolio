@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
-    <footer className="text-black dark:text-white text-center flex items-center justify-center w-full py-10">
-      <p className="text-sm text-muted-foreground">
+    <footer className="flex w-full items-center justify-center py-10 text-center text-black dark:text-white">
+      <p className="text-muted-foreground text-sm">
         Designed and developed by Adrian Petersson {new Date().getFullYear()}
       </p>
     </footer>

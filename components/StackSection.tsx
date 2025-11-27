@@ -1,20 +1,22 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable unused-imports/no-unused-vars */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable react/jsx-no-constructed-context-values */
-import React from 'react';
+import PortableText from "@sanity/block-content-to-react";
+import React from "react";
+import { IconType } from "react-icons";
+import { FaSass } from "react-icons/fa";
 import {
-  SiTailwindcss,
-  SiReact,
-  SiJavascript,
-  SiStyledcomponents,
   SiFigma,
+  SiJavascript,
   SiNextdotjs,
-} from 'react-icons/si';
-import { FaSass } from 'react-icons/fa';
-import PortableText from '@sanity/block-content-to-react';
-import { IconContext } from 'react-icons';
-import { sanityClient } from '../sanity';
-import { IconType } from 'react-icons';
+  SiReact,
+  SiStyledcomponents,
+  SiTailwindcss,
+} from "react-icons/si";
+
+import { sanityClient } from "../sanity";
 
 const icons: IconType[] = [
   SiTailwindcss,
@@ -27,8 +29,8 @@ const icons: IconType[] = [
 ];
 
 interface About {
-  body: any[];
   [key: string]: any;
+  body: any[];
 }
 
 interface StackSectionProps {
@@ -39,8 +41,8 @@ function StackSection({ about }: StackSectionProps): React.ReactElement {
   const { body } = about[0];
   return (
     <section
+      className="relative mx-auto flex max-w-[1300px] flex-col items-center justify-center gap-[50px] py-10 lg:grid lg:grid-cols-2"
       id="about"
-      className="flex flex-col items-center justify-center mx-auto max-w-[1300px] relative py-10 gap-[50px] lg:grid lg:grid-cols-2"
     >
       <div>
         <h1>About Me</h1>
@@ -48,7 +50,7 @@ function StackSection({ about }: StackSectionProps): React.ReactElement {
           <PortableText blocks={body} {...sanityClient.config()} />
         </div>
       </div>
-      <div className="w-full justify-evenly flex flex-wrap items-center lg:justify-end lg:my-[30px]"></div>
+      <div className="flex w-full flex-wrap items-center justify-evenly lg:my-[30px] lg:justify-end"></div>
     </section>
   );
 }

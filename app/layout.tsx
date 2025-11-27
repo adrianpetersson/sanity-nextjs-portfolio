@@ -1,10 +1,12 @@
-import '../styles/globals.css';
-import { Layout } from '../layout/Layout';
-import type { Metadata } from 'next';
+import "./globals.css";
+
+import type { Metadata } from "next";
+
+import { Layout } from "../layout/Layout";
 
 export const metadata: Metadata = {
-  title: 'Adrian Petersson portfolio',
-  description: 'Frontend and UX portfolio of Adrian Petersson',
+  description: "Frontend and UX portfolio of Adrian Petersson",
+  title: "Adrian Petersson portfolio",
 };
 
 export default function RootLayout({

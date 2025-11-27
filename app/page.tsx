@@ -1,24 +1,25 @@
-import Contact from '@/components/Contact';
-import HeroBanner from '@/components/HeroBanner';
-import ProjectSection from '@/components/ProjectSection';
-import { sanityClient } from '../sanity';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import HeroBanner from "@/components/HeroBanner";
+import ProjectSection from "@/components/ProjectSection";
 
-interface Project {
-  id?: string;
-  _id: string;
-  title: string;
-  slug: { current: string };
-  mainImage: any;
-  description: string;
-  type: string;
-  year?: string;
-  link?: string;
-  github?: string;
-}
+import { sanityClient } from "../sanity";
 
 interface About {
   _id: string;
   [key: string]: any;
+}
+
+interface Project {
+  _id: string;
+  description: string;
+  github?: string;
+  id?: string;
+  link?: string;
+  mainImage: any;
+  slug: { current: string };
+  title: string;
+  type: string;
+  year?: string;
 }
 
 export default async function Home() {
